@@ -8,18 +8,22 @@
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Josefin+Sans:wght@300;400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Josefin+Sans:wght@300;400&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- ION ICONS -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+    <!-- FONT AWESOME -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
     <!-- CSS STYLES-->
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- MAIN JS -->
-    <script src="main.js" defer></script>
+    <script src="main.js" type ='module' defer></script>
     <title>The Grind &mdash; Best Coffee In Town</title>
 </head>
 <body>
@@ -41,21 +45,70 @@
 
     <main>
         <section class="section section__hero">
-            <div class="hero__content container">
+            <div class="hero__content">
                 <div class="hero__content--inner">
-                    <!-- <span class="hero__content--intro-left subheading">The Grind</span> -->
+                    <span class="hero__content--intro-left subheading">Déjà Brew</span>
                     <h1 class="hero__content--title heading-primary">Enjoy your<br/>coffee with us</h1>
                     <p class="hero__content--message">Boost your productivity and build your mood  <br/> with a short break in the most comfortable place.</p>
-                    <div class="hero__content--btns">
-                        <button class="btn btn-lg">reservation</button>
-                        <a href="#menu" class="btn btn-lg">view menu</a>
+                    <button class="btn btn--cta margin-right-sm">reservation</button>
+                    <a href="#menu" class="btn btn--view-menu">view menu</a>
+                </div>
+                <div class="hero__content--delivered-coffee">
+                    <div class="hero__content--delivered-imgs">
+                        <img src="img/customers/customer-1.jpg" alt="Customer photo">
+                        <img src="img/customers/customer-2.jpg" alt="Customer photo">
+                        <img src="img/customers/customer-3.jpg" alt="customer photo">
+                        <img src="img/customers/customer-4.jpg" alt="customer photo">
+                        <img src="img/customers/customer-5.jpg" alt="customer photo">
+                        <img src="img/customers/customer-6.jpg" alt="customer photo">
                     </div>
+                    <p class="hero__content--delivered-text"> <span>250,000+</span> coffee delivered last year!</p>
                 </div>
             </div>
+        </section>
 
+        <section class="section__container top__section">
+            <span class="scroll-icon-bg">
+				<a href="#about"><i class="scroll-icon"></i></a>
+			</span>
+            <div class="container">
+                <!-- ABOUT -->
+				<section id="about" class="grid grid--2-cols grid--center-v">
+                    <div class="about-img">
+                        <img loading="lazy" src="img/cafe-inside.jpg" alt="restaurant image" />
+                        <span class="play-video-anim"></span>
+                        <a data-fslightbox href="https://www.youtube.com/watch?v=MaR-pJPXKyc" class="play-video"
+                            ><i class="fas fa-play"></i
+                        ></a>
+                    </div>
+
+                    <!-- <img class='about_content--img' src="img/cafe-inside.jpg" alt=""> -->
+                    
+                    <div class="about__content">
+                        <span class="subheading subheading--clr">About us</span>
+                        <h2 class="heading-secondary">We invite <br>you to visit our cafe</h2>
+                        <p class="about__content--message">In 2017, Déjà Brew opened its first location in downtown Boston. Focussed entirely on serving the perfect
+                            food, the cozy cafe located in the city's busy Financial District created a sensation
+                            in the area winning praise from food critics and numerous people's choice awards.
+                        </p>
+                        <!-- ABOUT BTNS -->
+						<div class="about__content--btns">
+                            <button class="btn">read more</button>
+                            <div class="about__content--social">
+                                <ul class="about__content--social" role="list">
+                                    <li><ion-icon name="logo-facebook" class="about__content--social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-instagram" class="about__content--social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-twitter" class="about__content--social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-youtube" class="about__content--social-icon"></ion-icon></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </section>
+            </div>
+        </div>
         </section>
     </main>
-    
-
 </body>
 </html>

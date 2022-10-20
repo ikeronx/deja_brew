@@ -1,7 +1,21 @@
+body{
+    color: var(--clr-primary-900);
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+    font-weight:var(--fw-300);
+    line-height: 1.6;
+    text-rendering: optimizeSpeed;
+    background-image: url(/img/bg.jpg);
+    background-size: 100%;
+    background-attachment: fixed;
+    position: relative;
+}
+
 /**************************/
 /* HERO SECTION */
 /**************************/
 .section__hero{
+    padding-block: 4.8rem 70.6rem;
     position: relative;
     color: #fff;
     height: 100vh;
@@ -9,14 +23,20 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.3)), url(/img/hero-4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: attachment;
 }
 
 .hero__content{
+    width: min(90%, 130rem);
+    margin: 0 auto;    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.hero__content--title{
+    color: var(--clr-neutral-100);
 }
 
 .hero__content--inner{
@@ -31,6 +51,160 @@
 }
 
 .hero__content--message{
-    color: #b3b3b3;
+    color: var(--clr-neutral-200);
     margin-bottom: 4.8rem;
 }
+
+.hero__content--delivered-coffee{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.6rem;
+    margin-top: 8rem;
+}
+
+@media screen and (min-width: 40em) {
+    .hero__content--delivered-coffee{
+        flex-direction: row;
+    }
+}
+
+.hero__content--delivered-imgs{
+    display: flex;
+}
+
+.hero__content--delivered-imgs img{
+    height: 4.8rem;
+    width: 4.8rem;
+    border-radius: 50%;
+    margin-right: -1.6rem;
+    border: 2px solid var(--clr-primary-400);
+}
+
+.hero__content--delivered-imgs img:last-child{
+    margin: 0rem;
+}
+
+.hero__content--delivered-text{
+    color: var(--clr-neutral-200);
+    font-weight: var(--fw-semi-bold);
+}
+
+.hero__content--delivered-text span{
+    color: var(--clr-primary-300);
+    font-weight: var(--fw-700);
+}
+
+/**************************/
+/* TOP SECTION */
+/**************************/
+.top__section {
+    padding: 7rem 0 3rem;
+    -webkit-transform: translateY(-4vh);
+    transform: translateY(-4vh);
+}
+
+/**************************/
+/*  ABOUT SECTION */
+/**************************/
+.about-img {
+    position: relative;
+    max-height: 575px;
+    overflow: hidden;
+    border-radius: 5px;
+    box-shadow: rgb(88 94 94) 0px 3px 12px -6px;
+    
+}
+
+.about-img img{
+    vertical-align: middle;
+}
+
+.about-img .play-video-anim {
+    height: 90px;
+    width: 90px;
+    background-color: var(--clr-neutral-100);
+    -webkit-animation: play-video-anim 1s cubic-bezier(.25,.8,.25,1) infinite;
+    animation: play-video-anim 1s cubic-bezier(.25,.8,.25,1) infinite;
+}
+
+.about-img .play-video, .about-img .play-video-anim {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+
+.about-img .play-video {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    padding: 35px;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: var(--clr-primary-400);
+    color: var(--clr-primary-500);
+}
+
+.fa-play{
+    color:  var(--clr-primary-9git 00);
+    font-weight: 900;
+    font-size: 2.0rem;
+}
+
+.about__content{
+    text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+    .about__content{
+        text-align: left;
+    }
+}
+
+.about__content--btns{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4.8rem;
+}
+
+@media screen and (min-width: 40em) {
+    .about__content--btns{
+        justify-content: flex-start;
+        text-align: left;
+    }
+}
+
+.about__content--message{
+    margin-bottom: 4.8rem;
+}
+
+.about__content--social{
+    display: flex;
+    align-self: center;
+    gap: 1.2rem;
+}
+
+.about__content--social-icon{
+    font-size: 2.4rem;
+    color: var(--clr-primary-900);
+}
+
+
+
+/* - spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+*/

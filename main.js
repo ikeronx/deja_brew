@@ -1,1 +1,5 @@
+/**
+* LIGHTBOX
+*/
+import 'fslightbox';
 
