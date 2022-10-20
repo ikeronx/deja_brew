@@ -58,12 +58,15 @@ Default: 9px - buttons
     --clr-primary-500: #7b5a3e;
     --clr-primary-400:  #8b6545;
     --clr-primary-300: #9a704d;
+    --clr-primary-100: #ebe2db;
 
     --clr-neutral-100: #fff;
     --clr-neutral-200: #999;  /* Hero text  */  /* Hero text  */
     
     --ff-primary: 'Playfair Display', serif;
     --ff-secondary: 'Inter', sans-serif;
+    /* --ff-secondary: 'Josefin Sans', sans-serif; */
+
     
     --ff-heading: var(--ff-primary);
     --ff-body: var(--ff-secondary);
@@ -325,6 +328,16 @@ Default: 9px - buttons
 
 .margin-bottom-sm{
     margin-bottom: 1.6rem !important;
+}
+
+.margin-bottom-md{
+    margin-bottom: 3.2rem !important;
+}
+
+@media screen and (min-width: 40em) {
+    .margin-bottom-md{
+        margin-bottom: 0 !important;
+    }
 }
 
 .text-center{
