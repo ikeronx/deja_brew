@@ -100,7 +100,7 @@ body{
 /* TOP SECTION */
 /**************************/
 .top__section {
-    padding: 7rem 0 3rem;
+    padding: 6.4rem 0 3rem;
     -webkit-transform: translateY(-4vh);
     transform: translateY(-4vh);
 }
@@ -155,7 +155,7 @@ body{
 }
 
 .fa-play{
-    color:  var(--clr-primary-9git 00);
+    color:  #f5f1ed;
     font-weight: 900;
     font-size: 2.0rem;
 }
@@ -172,16 +172,22 @@ body{
 
 .about__content--btns{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 4.8rem;
+    gap: 3.2rem;
 }
 
 @media screen and (min-width: 40em) {
     .about__content--btns{
         justify-content: flex-start;
+        flex-direction: row;
         text-align: left;
+        gap: 4.8rem;
     }
+}
+.about__content--btns button{
+    align-self: center;
 }
 
 .about__content--message{
@@ -191,15 +197,23 @@ body{
 .about__content--social{
     display: flex;
     align-self: center;
-    gap: 1.2rem;
+    gap: 2.4rem;
 }
 
 .about__content--social-icon{
-    font-size: 2.4rem;
+    font-size: 2.0rem;
     color: var(--clr-primary-900);
 }
 
+.why-us__content--message{
+    margin-bottom: 4.8rem;
+}
 
+@media screen and (min-width: 40em) {
+    .why-us__content--message{
+        margin-bottom: 7.4rem;
+    }
+}
 
 /* - spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 

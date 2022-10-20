@@ -75,6 +75,7 @@ Default: 9px - buttons
     --fw-500: 500;
     --fw-600: 600;
     --fw-700: 700;
+    --fw-900: 900;
 
     --fs-body: 1.8rem;
 }
@@ -176,12 +177,13 @@ Default: 9px - buttons
 .grid{
     display: grid;
     column-gap: 4.8rem;
-    row-gap: 4.8rem;
-    /* row-gap: 9.6rem; */
+    row-gap: 3.2rem;
 }
 
-.grid:not(:last-child){ 
-    margin-bottom: 9.6rem;
+@media screen and (min-width: 40em) {
+    .grid{
+        row-gap: 4.8rem; 
+    }
 }
 
 .grid--2-cols, .grid--3-cols{
@@ -202,9 +204,25 @@ Default: 9px - buttons
     align-items: center;
 }
 
+.separator{
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    border-top: 1px dashed var(--clr-primary-900);
+    opacity: 0.3;
+    border-radius: 100px;
+    margin-block: 4.8rem;
+}
+
+@media screen and (min-width: 40em) {
+    .separator{
+        margin-block: 6.4rem;
+    }
+}
+
+
 .heading-primary, .heading-secondary{
     font-family: var(--ff-primary);
-    font-weight: var(--fw-500);
     color:  var(--clr-primary-900);
     line-height: 1.2;
     letter-spacing: -0.5px;
@@ -213,6 +231,7 @@ Default: 9px - buttons
 
 .heading-primary{
     font-size: 4.8rem;
+    font-weight: var(--fw-500);
 }
 
 @media screen and (min-width: 40em) {
@@ -224,6 +243,7 @@ Default: 9px - buttons
 .heading-secondary{
     font-size: 3.6rem; 
     line-height: 1.2;
+    font-weight: var(--fw-900);
 }
 
 @media screen and (min-width: 40em) {
@@ -235,7 +255,7 @@ Default: 9px - buttons
 .subheading{
     display: block;
     font-size: 1.2rem;
-    font-weight: var(--fw-500);
+    font-weight: var(--fw-600);
     color: var(--clr-neutral-100);
     text-transform: uppercase;
     letter-spacing: 2.5px;
@@ -305,6 +325,10 @@ Default: 9px - buttons
 
 .margin-bottom-sm{
     margin-bottom: 1.6rem !important;
+}
+
+.text-center{
+    text-align: center;
 }
 
 /* KEYFRAMES VARIABLES */
