@@ -2,10 +2,10 @@ body{
     color: var(--clr-primary-900);
     font-family: var(--ff-secondary);
     font-size: var(--fs-body);
-    font-weight:250;
+    font-weight:300;
     line-height: 1.6;
     text-rendering: optimizeSpeed;
-    background-image: url(/img/bg.jpg);
+    background-image: linear-gradient(to right,  rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(/img/bg-3.webp);
     background-size: 100%;
     background-attachment: fixed;
     position: relative;
@@ -17,9 +17,8 @@ body{
 .section__hero{
     padding-block: 4.8rem 70.6rem;
     position: relative;
-    color: #fff;
+    color: var(--clr-primary-100);
     height: 100vh;
-
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.3)), url(/img/hero-4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -155,7 +154,7 @@ body{
 }
 
 .fa-play{
-    color:  #f5f1ed;
+    color: var(--clr-neutral-100);
     font-weight: 900;
     font-size: 2.0rem;
     opacity: 1;
@@ -176,7 +175,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 3.2rem;
+    gap: 4.8rem;
 }
 
 @media screen and (min-width: 40em) {
@@ -184,15 +183,23 @@ body{
         justify-content: flex-start;
         flex-direction: row;
         text-align: left;
-        gap: 4.8rem;
     }
 }
+
 .about__content--btns button{
     align-self: center;
 }
 
 .about__content--message{
-    margin-bottom: 4.8rem;
+    margin-bottom: 3.2rem;    
+    /* width: 100%; */
+}
+
+@media screen and (min-width: 40em) {
+    .about__content--message{
+        margin-bottom: 4.8rem;
+        width:89%;
+    }
 }
 
 .about__content--social{
@@ -201,21 +208,9 @@ body{
     gap: 2.4rem;
 }
 
-.about__content--social-icon{
-    font-size: 2.0rem;
-    color: var(--clr-primary-900);
-}
-
-.why-us__content--message{
-    margin-bottom: 4.8rem;
-}
-
-@media screen and (min-width: 40em) {
-    .why-us__content--message{
-        margin-bottom: 7.4rem;
-    }
-}
-
+/**************************/
+/*  WHY US SECTION */
+/**************************/
 .feature-icon{
     color: var(--clr-primary-400);
     font-size: 3.2rem; 
@@ -225,11 +220,62 @@ body{
     border-radius: 50%;
 }
 
-.feature-title{
-    font-family: var(--ff-primary);
-    font-size: 2.4rem;
-    font-weight: var(--fw-700);
+/**************************/
+/*  TEAM SECTION */
+/**************************/
+.card__content{
+    background-color: var(--clr-neutral-100);
+    box-shadow: 0 5px 10px 0 rgb(26 47 51 / 15%);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.card__content--img{
+    max-height: 400px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 40em) {
+    .card__content--img{
+        max-height: 800px;
+    }
+}
+
+.card__content--title{
+    margin:1.6rem 0 0.8rem 0;
+}
+
+.card__content--subtitle{
+    position: relative;
+}
+
+.card__content--subtitle:after{
+    content: '';
+    display: inline-block;
+    position: absolute;
+    margin: auto;
+    top: 1.6rem;
+    right: 0;
+    bottom: 0rem;
+    left: 0;
+    width: 85%;
+    height: 1px;
+    margin-block: 2.4rem;
+    border-bottom: 1px dashed var(--clr-primary-900);
+    opacity: 0.3;
+}
+
+.card__content--social{
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    gap: 2.4rem;
+    margin-top: 3.2rem;
     margin-bottom: 1.6rem;
+}
+
+.social-icon--opacity{
+    color: #827a74;
 }
 
 /* - spacing system (px)

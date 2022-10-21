@@ -19,6 +19,7 @@
 
     <!-- CSS STYLES-->
     <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/keyframes.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/style.css">
 
@@ -92,13 +93,13 @@
                         </p>
                         <!-- ABOUT BTNS -->
 						<div class="about__content--btns">
-                            <button class="btn">read more</button>
+                            <button class="btn ">read more</button>
                             <div class="about__content--social">
                                 <ul class="about__content--social" role="list">
-                                    <li><ion-icon name="logo-facebook" class="about__content--social-icon"></ion-icon></li>
-                                    <li><ion-icon name="logo-instagram" class="about__content--social-icon"></ion-icon></li>
-                                    <li><ion-icon name="logo-twitter" class="about__content--social-icon"></ion-icon></li>
-                                    <li><ion-icon name="logo-youtube" class="about__content--social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-facebook" class="social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-instagram" class="social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-twitter" class="social-icon"></ion-icon></li>
+                                    <li><ion-icon name="logo-youtube" class="social-icon"></ion-icon></li>
                                 </ul>
                             </div>
                         </div>
@@ -112,25 +113,82 @@
                 <section id="why-us">
                     <span class="subheading subheading--clr text-center">Why us</span>
                     <h2 class="heading-secondary text-center">Why do people choose us?</h2>
-                    <p class="why-us__content--message  text-center">Déjà Brew has received numerous awards including: Best <br>brunch from the readers of Boston Globe</p>
-                <div class="why-us--features grid grid--3-cols">
-                    <div class="feature text-center margin-bottom-md">
-                        <ion-icon class='feature-icon' name="cafe-outline"></ion-icon>
-                        <p class="feature-title">Best beans</p>
-                        <p class="feature-text">We use only the best beans <br> in the market. We always care <br> about our clients. </p>
+                    <p class="message--margin-bottom-md text-center">Déjà Brew has received numerous awards including: Best <br>brunch from the readers of Boston Globe.</p>
+                    <!-- FEATURES -->
+                    <div class="why-us--features grid grid--3-cols">
+                        <div class="feature text-center margin-bottom-md">
+                            <ion-icon class='feature-icon' name="cafe-outline"></ion-icon>
+                            <h3 class="heading-tertiary">Best beans</h3>
+                            <p class="feature-text">We use only the best beans <br> in the market. We always care <br> about our clients. </p>
+                        </div>
+                        <div class="feature text-center margin-bottom-md">
+                            <ion-icon class='feature-icon' name="bowling-ball-outline"></ion-icon>
+                            <h3 class="heading-tertiary ">Fresh bakery</h3>
+                            <p class="feature-text">Always fresh and tasty bakery<br> products waiting for you in our<br> coffee house. </p>
+                        </div>
+                        <div class="feature text-center">
+                            <ion-icon class='feature-icon' name="water-outline"></ion-icon>
+                            <h3 class="heading-tertiary">Quality milk</h3>
+                            <p class="feature-text">We care about your health and<br> use milk only from the best<br> manufacturers. </p>
+                        </div>
                     </div>
-                    <div class="feature text-center margin-bottom-md">
-                        <ion-icon class='feature-icon' name="bowling-ball-outline"></ion-icon>
-                        <p class="feature-title">Fresh Bakery</p>
-                        <p class="feature-text">Always fresh and tasty bakery<br> products waiting for you in our<br> coffee house. </p>
-                    </div>
-                    <div class="feature text-center">
-                        <ion-icon class='feature-icon' name="water-outline"></ion-icon>
-                        <p class="feature-title">Quality milk</p>
-                        <p class="feature-text">We care about your health and<br> use milk only from the best<br> manufacturers. </p>
-                    </div>
-                </div>
                 </section>
+
+                <!-- SEPARATOR -->
+                <span class="separator">&nbsp;</span>
+
+                <!-- TEAM SEC-->
+                <section id="team">
+                    <span class="subheading subheading--clr text-center">Team</span>
+                    <h2 class="heading-secondary text-center">We are ready to serve you</h2>
+                    <p class="message--margin-bottom-md text-center">We have a combined 12&#43; years in the culinary industry, <br> we love food and we love what we do.</p>
+                    <!-- TEAM CARDS -->
+                    <div class="cards grid grid--3-cols">
+                        <!-- CARD 1-->
+                        <div class="card__content">
+                            <div class="card__content--img"><img src="img/team/kim.jpeg" alt="Pastry chef"></div>
+                            <h3 class="card__content--title heading-tertiary text-center">Angie Kim</h3>
+                            <p class="card__content--subtitle text-center ">Pastry chef</p>
+                            <span class="card__content--separate"></span>
+                            <ul class="card__content--social" role="list">
+                                <li><ion-icon name="logo-facebook" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-instagram" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-twitter" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-youtube" class="social-icon social-icon--opacity"></ion-icon></li>
+                            </ul>
+                        </div>
+                        <!-- CARD 2-->
+                        <div class="card__content">
+                            <div class="card__content--img"><img src="img/team/james.jpeg" alt="Barista"></div>
+                            <h3 class="card__content--title heading-tertiary text-center">James Willis</h3>
+                            <p class="card__content--subtitle text-center ">Barista</p>
+                            <!-- <span class="card__content--separate"></span> -->
+                            <ul class="card__content--social" role="list">
+                                <li><ion-icon name="logo-facebook" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-instagram" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-twitter" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-youtube" class="social-icon social-icon--opacity"></ion-icon></li>
+                            </ul>
+                        </div>
+                        <!-- CARD 3-->
+                        <div class="card__content">
+                            <div class="card__content--img"><img src="img/team/chris.webp" alt="Barista"></div>
+                            <h3 class="card__content--title heading-tertiary text-center">Chris Bane</h3>
+                            <p class="card__content--subtitle text-center ">Pastry chef</p>
+                            <span class="card__content--separate"></span>
+                            <ul class="card__content--social" role="list">
+                                <li><ion-icon name="logo-facebook" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-instagram" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-twitter" class="social-icon social-icon--opacity"></ion-icon></li>
+                                <li><ion-icon name="logo-youtube" class="social-icon social-icon--opacity"></ion-icon></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- SEPARATOR -->
+                <span class="separator">&nbsp;</span>
+
             </div>
         </section>
     </main>
