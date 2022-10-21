@@ -55,6 +55,7 @@ Default: 9px - buttons
 /**************************/
 :root{
     --clr-primary-900: #2e2217;
+    --clr-primary-900-tint-600: #827a74;
     --clr-primary-500: #7b5a3e;
     --clr-primary-400:  #8b6545;
     --clr-primary-300: #9a704d;
@@ -189,7 +190,7 @@ Default: 9px - buttons
     }
 }
 
-.grid--2-cols, .grid--3-cols{
+.grid--2-cols, .grid--3-cols, .grid--4-cols{
     grid-template-columns: 1fr;
 }
 
@@ -200,6 +201,10 @@ Default: 9px - buttons
     
     .grid--3-cols{
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid--4-cols{
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -212,7 +217,7 @@ Default: 9px - buttons
     width: 100%;
     height: 1px;
     border-top: 1px dashed var(--clr-primary-900);
-    opacity: 0.3;
+    opacity: .3;
     border-radius: 100px;
     margin-block: 4.8rem;
 }
