@@ -91,7 +91,7 @@ body{
 }
 
 .hero__content--delivered-text span{
-    color: var(--clr-primary-300);
+    color: #884835;
     font-weight: var(--fw-700);
 }
 
@@ -154,7 +154,7 @@ body{
 }
 
 .fa-play{
-    color: var(--clr-neutral-100);
+    color: var(--clr-primary-900);
     font-weight: 900;
     font-size: 2.0rem;
     opacity: 1;
@@ -335,7 +335,7 @@ body{
 
 @media screen and (min-width: 40em) {
     .opening-hours--container{
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 65% 35%;
     }
 }
 
@@ -344,7 +344,7 @@ body{
     place-content: center;
     text-align: center; 
     padding: 3.2rem;
-    background-image: linear-gradient(to right, rgb(46, 34, 23, 0.5), rgb(46, 34, 23, 0.5)), url(/img/club100.jpg);
+    background-image: linear-gradient( rgb(62, 26, 15, 0.55), rgb(62, 26, 15, 0.55)), url(/img/club100.jpg);
     background-size:cover;
     background-attachment: fixed;
 }
@@ -363,6 +363,7 @@ body{
 }
 
 .opening-hours--msg{
+    color: #bbb;
     margin-bottom: 3.2rem;
 }
 
@@ -379,11 +380,30 @@ body{
     }
 }
 
-/* .opening-hours--content button, .opening-hours--content a{
-    justify-self: flex-start;
-} */
+.opening-hours--time{
+    place-content: center;
+    text-align: center;
+    padding: 7.0rem;
+}
 
+.opening-hours--time ul{
+    display: grid;
+    row-gap: 4.8rem;
+}
 
+.days{
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: var(--fw-600);
+    letter-spacing: .3rem;
+    margin-bottom: .8rem;
+}
+
+.time{
+    font-size: 2.8rem;
+    font-weight: var(--fw-700);
+    margin-bottom: -.8rem;
+}
 
 
 /* - spacing system (px)

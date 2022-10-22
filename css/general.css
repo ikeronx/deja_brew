@@ -54,12 +54,12 @@ Default: 9px - buttons
 /* HTMl GENERAL STYLES */
 /**************************/
 :root{
-    --clr-primary-900: #2e2217;
-    --clr-primary-900-tint-600: #827a74;
-    --clr-primary-500: #7b5a3e;
-    --clr-primary-400:  #8b6545;
-    --clr-primary-300: #9a704d;
-    --clr-primary-100: #ebe2db;
+    --clr-primary-900: #251009;
+    --clr-primary-900-tint-600: #7c706b;
+    --clr-primary-500: #6f2f1b;
+    --clr-primary-400:  #7B341E;
+    --clr-primary-300: #884835;
+    --clr-primary-100: #e5d6d2;
 
     --clr-neutral-100: #fff;
     --clr-neutral-200: #999;  /* Hero text  */  /* Hero text  */
