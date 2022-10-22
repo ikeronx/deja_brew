@@ -286,20 +286,12 @@ body{
     color: var(--clr-primary-900-tint-600);
 }
 
-
 /**************************/
 /*  NUMBERS SECTION */
 /**************************/
 .numbers{
-    margin-block: 0rem;
     display: grid;
     place-items: center;
-}
-
-@media screen and (min-width: 40em) {
-    .numbers{
-        margin-block: 4.8rem;
-    }
 }
 
 .numbers__block-num {
@@ -329,6 +321,70 @@ body{
     text-transform: uppercase;
     letter-spacing: 0.2rem;
 }
+
+/**************************/
+/*  OPENING HOURS SECTION */
+/**************************/
+.opening-hours--container{
+    display: grid;
+    grid-template-columns: 1fr;
+    border-radius: 1rem;
+    box-shadow: rgb(18 34 36 / 15%) 0px 5px 10px 0px;
+    overflow: hidden;
+}
+
+@media screen and (min-width: 40em) {
+    .opening-hours--container{
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.opening-hours--content{
+    display: grid;
+    place-content: center;
+    text-align: center; 
+    padding: 3.2rem;
+    background-image: linear-gradient(to right, rgb(46, 34, 23, 0.5), rgb(46, 34, 23, 0.5)), url(/img/club100.jpg);
+    background-size:cover;
+    background-attachment: fixed;
+}
+
+@media screen and (min-width: 40em) {
+    .opening-hours--content{
+        place-content: start;
+        text-align: left;
+        padding: 6.4rem;
+        
+    }
+}
+
+.opening-hours--title, .opening-hours--msg{
+    color: var(--clr-neutral-100);
+}
+
+.opening-hours--msg{
+    margin-bottom: 3.2rem;
+}
+
+.dual-bts button{
+    margin-right: 0rem;
+    margin-bottom: 1.6rem;
+
+}
+
+@media screen and (min-width: 40em) {
+    .dual-bts button{
+        margin-right: 1.6rem;
+        margin-bottom: 0rem;
+    }
+}
+
+/* .opening-hours--content button, .opening-hours--content a{
+    justify-self: flex-start;
+} */
+
+
+
 
 /* - spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
