@@ -412,27 +412,15 @@ body{
 /**************************/
 /*  MOBILE APP SECTION */
 /**************************/
-.mobile-app__content{
-    /* margin-block: 8.8rem; */
-}
-
-@media screen and (min-width: 40em) {
-    .mobile-app-sec{
-        margin-block: 0rem;
-    }
-}
-
 .mobile-app__content--left{
     place-items: center;
     text-align: center;
-    margin-top: 4.8rem;
 }
 
 @media screen and (min-width: 40em) {
     .mobile-app__content--left{
         place-items: left;
         text-align: left;
-        margin-top: 0;
     }
 }
 
@@ -444,8 +432,8 @@ body{
 
 .coffee-img{
     transform: scale(1);
-    z-index: 999;
     filter: brightness(100%); 
+    z-index: 999;
     margin-top: -4rem;
 }
 
@@ -463,90 +451,103 @@ body{
     margin-bottom: 4.8rem;    
 }
 
-
-
-/* .reviews__carousel{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 4.8rem;
-}
-
-@media screen and (min-width: 40em) {
-    .reviews__carousel{
-        justify-content: flex-start;
-        flex-direction: row;
-        text-align: left;
-    }
-} */
-
 .carousel{
-    height: 215px; 
-    max-width: 610px;
+    height: 20.15rem; 
+    max-width: 60.1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-
     z-index: 0;
     position: relative;
 }
 
-.slider{
-    width:610px;
-    border-radius: 8px;
-    
+.carousel__slider{
+    width:60.1rem;
+    border-radius: .8rem;
     display: grid;
     place-items: center;
-
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px;
-    gap: 70px;
+    grid-template-rows: 3rem;
+    gap: 7rem;
     position: relative;
 }
 
-.slide{
+.carousel__slide{
     display: flex;
     align-items: center;
-    gap: 96px;
-    padding: 32px 32px 32px 96px;
-    border-radius: 8px;
+    gap: 9.6rem;
+    padding: 3.2rem 3.2rem 3.2rem 9.6rem;
+    border-radius: .8rem;
 
     position: absolute; 
     background-color: var(--clr-primary-400);
 }
 
-.testimonial__img{
-    height: 100px;
-    border-radius: 8px;
+.carousel__testimonial--img{
+    height: 10rem;
+    border-radius: .5rem;
     transform: scale(2.3);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); 
 }
 
-.testimonial__text{
+.carousel__testimonial--text{
     font-weight: var(--fw-400);
-    /* line-height: 1.5; */
     margin-bottom: 2.4rem;
 
     color:var(--clr-primary-200);
 }
 
-.testimonial__author{
-    font-size: 14px;
-    margin-bottom: 4px;
+.carousel__testimonial--author{
+    font-size: 1.4rem;
+    margin-bottom: .4rem;
     color: var(--clr-primary-250);
 
 }
 
-.testimonial__job{
-    font-size:12px;
+.carousel__testimonial--job{
+    font-size:1.2rem;
     color: var(--clr-primary-250);
 }
 
+.carousel-btn{
+    background-color: #fff;
+    border: none;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    display: grid;
+    place-items: center;
 
-/* .reviews__carousel button{
-    align-self: center;
-} */
+    position: absolute;
+    z-index: 3;
+}
+
+.carousel-btn--right{
+    /* IN RELATION TO PARENT ELEMENT */
+    right: 0;
+    top: 50%;
+    
+    /* IN RELATION TO ELEMENT ITSELF */
+    transform: translate(50%, -50%)
+}
+
+.carousel-btn--left{
+    /* IN RELATION TO PARENT ELEMENT */
+    left: 0;
+    top: 50%;
+
+    /* IN RELATION TO ELEMENT ITSELF */
+    transform: translate(-50%, -50%)
+}
+
+
+.carousel-btn--icon{
+    height: 2.4rem;
+    width: 2.4rem;
+    stroke: var(--clr-primary-400);
+}
 
 
 /* - spacing system (px)
