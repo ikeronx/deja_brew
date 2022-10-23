@@ -5,10 +5,16 @@ body{
     font-weight:300;
     line-height: 1.6;
     text-rendering: optimizeSpeed;
-    background-image: linear-gradient(to right,  rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(/img/bg-3.webp);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(https://img.freepik.com/premium-photo/dark-wood-texture-background_124507-7132.jpg?w=2000);
     background-size: 100%;
     background-attachment: fixed;
     position: relative;
+}
+
+@media screen and (min-width: 40em) {
+    body{
+        background-image: linear-gradient(to right,  rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url(https://img.freepik.com/premium-photo/dark-wood-texture-background_124507-7132.jpg?w=2000);
+    }
 }
 
 /**************************/
@@ -19,7 +25,7 @@ body{
     position: relative;
     color: var(--clr-primary-100);
     height: 100vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.3)), url(/img/hero-4.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.0)), url(/img/hero-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: attachment;
@@ -50,7 +56,6 @@ body{
 }
 
 .hero__content--message{
-    color: var(--clr-neutral-200);
     margin-bottom: 4.8rem;
 }
 
@@ -60,7 +65,7 @@ body{
     align-items: center;
     text-align: center;
     gap: 1.6rem;
-    margin-top: 8rem;
+    margin-top: 4.8rem;
 }
 
 @media screen and (min-width: 40em) {
@@ -78,7 +83,7 @@ body{
     width: 4.8rem;
     border-radius: 50%;
     margin-right: -1.6rem;
-    border: 2px solid var(--clr-primary-400);
+    border: 5px solid var(--clr-primary-400);
 }
 
 .hero__content--delivered-imgs img:last-child{
@@ -86,7 +91,7 @@ body{
 }
 
 .hero__content--delivered-text{
-    color: var(--clr-neutral-200);
+    color: var(--clr-grey-700);
     font-weight: var(--fw-semi-bold);
 }
 
@@ -192,7 +197,6 @@ body{
 
 .about__content--message{
     margin-bottom: 3.2rem;    
-    /* width: 100%; */
 }
 
 @media screen and (min-width: 40em) {
@@ -346,7 +350,7 @@ body{
     padding: 3.2rem;
     background-image: linear-gradient( rgb(62, 26, 15, 0.55), rgb(62, 26, 15, 0.55)), url(/img/club100.jpg);
     background-size:cover;
-    background-attachment: fixed;
+    background-attachment: attachment;
 }
 
 @media screen and (min-width: 40em) {
@@ -363,7 +367,7 @@ body{
 }
 
 .opening-hours--msg{
-    color: #bbb;
+    color: var(--clr-grey-200);
     margin-bottom: 3.2rem;
 }
 
@@ -404,6 +408,145 @@ body{
     font-weight: var(--fw-700);
     margin-bottom: -.8rem;
 }
+
+/**************************/
+/*  MOBILE APP SECTION */
+/**************************/
+.mobile-app__content{
+    /* margin-block: 8.8rem; */
+}
+
+@media screen and (min-width: 40em) {
+    .mobile-app-sec{
+        margin-block: 0rem;
+    }
+}
+
+.mobile-app__content--left{
+    place-items: center;
+    text-align: center;
+    margin-top: 4.8rem;
+}
+
+@media screen and (min-width: 40em) {
+    .mobile-app__content--left{
+        place-items: left;
+        text-align: left;
+        margin-top: 0;
+    }
+}
+
+.app-icon{
+    vertical-align: middle;
+    margin-right: 1.2rem;
+    font-size: 1.8rem;
+}
+
+.coffee-img{
+    transform: scale(1);
+    z-index: 999;
+    filter: brightness(100%); 
+    margin-top: -4rem;
+}
+
+@media screen and (min-width: 40em) {
+    .coffee-img{
+        transform: scale(1.2); 
+        margin-top: 0;
+        }
+}
+
+/**************************/
+/*  GALLERY & REVIEWS SECTION */
+/**************************/
+.reviews__content--message{
+    margin-bottom: 4.8rem;    
+}
+
+
+
+/* .reviews__carousel{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4.8rem;
+}
+
+@media screen and (min-width: 40em) {
+    .reviews__carousel{
+        justify-content: flex-start;
+        flex-direction: row;
+        text-align: left;
+    }
+} */
+
+.carousel{
+    height: 215px; 
+    max-width: 610px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 0;
+    position: relative;
+}
+
+.slider{
+    width:610px;
+    border-radius: 8px;
+    
+    display: grid;
+    place-items: center;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 30px;
+    gap: 70px;
+    position: relative;
+}
+
+.slide{
+    display: flex;
+    align-items: center;
+    gap: 96px;
+    padding: 32px 32px 32px 96px;
+    border-radius: 8px;
+
+    position: absolute; 
+    background-color: var(--clr-primary-400);
+}
+
+.testimonial__img{
+    height: 100px;
+    border-radius: 8px;
+    transform: scale(2.3);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); 
+}
+
+.testimonial__text{
+    font-weight: var(--fw-400);
+    /* line-height: 1.5; */
+    margin-bottom: 2.4rem;
+
+    color:var(--clr-primary-200);
+}
+
+.testimonial__author{
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--clr-primary-250);
+
+}
+
+.testimonial__job{
+    font-size:12px;
+    color: var(--clr-primary-250);
+}
+
+
+/* .reviews__carousel button{
+    align-self: center;
+} */
 
 
 /* - spacing system (px)
