@@ -401,3 +401,13 @@ Default: 9px - buttons
     text-align: center;
 }
 
+.text-center--responsive{
+    text-align: center;
+}
+
+@media screen and (min-width: 40em) {
+    .text-center--responsive{
+        text-align: left;
+    }
+}
+

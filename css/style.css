@@ -501,7 +501,6 @@ body{
     font-size: 1.4rem;
     margin-bottom: .4rem;
     color: var(--clr-primary-250);
-
 }
 
 .carousel__testimonial--job{
@@ -512,42 +511,61 @@ body{
 .carousel-btn{
     background-color: #fff;
     border: none;
-    height: 40px;
-    width: 40px;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
     cursor: pointer;
     display: grid;
     place-items: center;
-
     position: absolute;
     z-index: 3;
 }
 
 .carousel-btn--right{
-    /* IN RELATION TO PARENT ELEMENT */
     right: 0;
     top: 50%;
-    
-    /* IN RELATION TO ELEMENT ITSELF */
     transform: translate(50%, -50%)
 }
 
 .carousel-btn--left{
-    /* IN RELATION TO PARENT ELEMENT */
     left: 0;
     top: 50%;
-
-    /* IN RELATION TO ELEMENT ITSELF */
     transform: translate(-50%, -50%)
 }
-
 
 .carousel-btn--icon{
     height: 2.4rem;
     width: 2.4rem;
     stroke: var(--clr-primary-400);
 }
+
+.dots{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, 12.8rem);
+
+    display: flex;
+    gap: 1.2rem;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.dot{
+    border: 0;
+    border-radius: 50%;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: #ccc;
+    cursor: pointer;
+
+}
+
+.dot--fill{
+    background-color: var(--clr-primary-400);
+}
+
 
 
 /* - spacing system (px)
