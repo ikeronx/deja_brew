@@ -250,11 +250,11 @@
         <section id='mobile-app' class="mobile-app-sec">
             <div class="mobile-app__content container grid grid--2-cols grid--center-v">
                 <div class="mobile-app__content--left">
-                    <span class="subheading">Power Deals</span>
+                    <span class="subheading margin-top-md-responsive">Power Deals</span>
                     <h3 class="heading-tertiary--lg heading--clr-light">Buy two lattes, <br>Get two free!</h3>
                     <p class="heading--clr-light msg--tint">Don't feel like dining in? Use our new <br> dedicated mobile app. Available now.</p>
-                    <div class="dual-btns margin-top-md margin-bottom-md">
-                        <a href="#" class="btn dual-btn--margin-left margin-bottom-md"><ion-icon class='app-icon' name="logo-google-playstore"></ion-icon><span>playstore</span></a>
+                    <div class="dual-btns margin-top-md">
+                        <a href="#" class="btn dual-btn--margin-left margin-bottom-md-responsive"><ion-icon class='app-icon' name="logo-google-playstore"></ion-icon><span>playstore</span></a>
                         <a href="#" class="btn"><ion-icon  class='app-icon' name="logo-apple-appstore"></ion-icon>appstore</a>
 
 
@@ -272,13 +272,38 @@
             <div class="container">
                 <!-- REVIEWS SEC-->
 				<section id="reviews" class="grid grid--2-cols grid--center-v">
-                    <div class="about-img">
-                        <img src="img/cafe-inside.jpg" alt="restaurant image" />
-                        <span class="play-video-anim"></span>
-                        <a data-fslightbox href="https://www.youtube.com/watch?v=MaR-pJPXKyc" class="play-video"
-                            ><i class="fas fa-play"></i
-                        ></a>
+                    <!-- GALLERY -->
+                    <div class="gallery">
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-1.jpg" alt="Photo of beautifully arranged food">
+                            <!-- <figcaption>caption</figcaption> -->
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-8.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-3.jpg" alt="Photo of beautifully arranged">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-6.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-2.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-4.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-9.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-7.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
+                        <figure class="gallery-item">
+                            <img src="img/gallery/gallery-5.jpg" alt="Photo of beautifully arranged food">
+                        </figure>
                     </div>
+
                     <!-- REVIEW CONTENT -->
                     <div class="reviews__content">
                         <span class="subheading subheading--clr-dark text-center--responsive">Reviews</span>
@@ -286,40 +311,36 @@
                         <p class="reviews__content--message text-center--responsive">We've been in business a very long time, hear what our clients <br> have to say about their experience with us.
                         </p>
                         <!-- CAROUSEL -->
-                            <div class="carousel">
-                                <div class="carousel__slider">
-                                    <div class="carousel__slide">
-                                        <img class='carousel__testimonial--img' src="https://64.media.tumblr.com/cfd6cac0e231470147c069b385eb61b0/3eb23cd9d087e809-88/s400x600/09b6aa0697d2200932dab765d22d0fdf13462335.jpg" alt="Customer photo">
-                                        <blockquote class="carousel__testimonial">
-                                            <p class="carousel__testimonial--text"> Amazing service and staff. You won’t find better latte in Boston.</p>
-                                            <p class="carousel__testimonial--author">Rebecca Glasgow</p>
-                                            <p class="carousel__testimonial--job">Software Engineer at Instagram</p>
-                                        </blockquote>
-                                    </div>
-                    
-                    
-                                    <button class="carousel-btn carousel-btn--left">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                                        </svg>
-                                    </button>
-                                    <button class="carousel-btn carousel-btn--right">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                                        </svg>
-                                    </button> 
-                                    <div class="dots">
-                                        <button class='dot dot--fill' data-slide=''>&nbsp;</button>
-                                        <button class='dot' data-slide=''>&nbsp;</button>
-                                        <button class='dot' data-slide=''>&nbsp;</button>
-                                    </div>
+                        <div class="carousel">
+                            <div class="carousel__slider carousel__container">
+                                <div class="carousel__slide">
+                                    <img class='carousel__testimonial--img' src="https://64.media.tumblr.com/cfd6cac0e231470147c069b385eb61b0/3eb23cd9d087e809-88/s400x600/09b6aa0697d2200932dab765d22d0fdf13462335.jpg" alt="Customer photo">
+                                    <blockquote class="carousel__testimonial">
+                                        <p class="carousel__testimonial--text"> Amazing service and staff. You won’t find better latte in Boston.</p>
+                                        <p class="carousel__testimonial--author">Rebecca Glasgow</p>
+                                        <p class="carousel__testimonial--job">Software Engineer at Instagram</p>
+                                    </blockquote>
                                 </div>
+                
+                
+                                <button class="carousel-btn carousel-btn--left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button class="carousel-btn carousel-btn--right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button> 
+                                <div class="dots"> </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <!-- SEPARATOR -->
-                <!-- <span class="separator">&nbsp;</span> -->
+                <span class="separator">&nbsp;</span>
 
                 <!-- WHY US SEC -->
                 <!-- <section id="why-us">

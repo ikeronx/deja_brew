@@ -322,7 +322,7 @@ Default: 9px - buttons
     border-radius: 5px;
     width: auto;
 
-    /* only for btn */
+    /* only for button tag */
     border: none;
     cursor: pointer;
     font-family: inherit;
@@ -382,6 +382,25 @@ Default: 9px - buttons
 .margin-top-md{
     margin-top: 3.2rem !important;
 }
+
+.margin-top-md-responsive{
+    margin-top: 3.2rem;
+}
+
+.margin-bottom-md-responsive{
+    margin-bottom: 3.2rem;
+}
+
+@media screen and (min-width: 40em) {
+    .margin-top-md-responsive{
+        margin-top: 0;
+    }
+
+    .margin-bottom-md-responsive{
+        margin-bottom: 0;
+    }
+}
+
 
 .margin-bottom-sm{
     margin-bottom: 1.6rem !important;

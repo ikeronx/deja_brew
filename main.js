@@ -3,3 +3,126 @@
 */
 import 'fslightbox';
 
+/**************************/
+/* CAROUSEL */
+/**************************/
+// DATA
+const reviews = [
+    {
+        id: 1,
+        name: "Rebecca Glasgow",
+        job: "Software Engineer at Instagram 🧑🏽‍💻",
+        img:
+        "https://64.media.tumblr.com/cfd6cac0e231470147c069b385eb61b0/3eb23cd9d087e809-88/s400x600/09b6aa0697d2200932dab765d22d0fdf13462335.jpg",
+        text:
+        "Amazing service and staff. You won’t find better latte in Boston.",
+    },
+    {
+        id: 2,
+        name: "Corey Malik",
+        job: "Data Scientist at Google",
+        img:
+        "https://64.media.tumblr.com/a88372f75336a59b3c2702f17d4f7bb4/3eb23cd9d087e809-6c/s400x600/19d6021705fff66b9733c24248900efd81bdce13.jpg",
+        text:
+        " The best word to describe Déjà Brew is INCREDIBLE!",
+    },
+    {
+        id: 3,
+        name: "Jessica Paige ✌🏻",
+        job: "Front-End Developer at Netflix",
+        img:
+        "https://64.media.tumblr.com/7a1270ee3d3010456e663db235856d8b/3eb23cd9d087e809-a0/s400x600/ab43fb61b4438644c9724c4d2ef1cfce53d3445a.jpg",
+        text:
+        "We visit Déjà Brew as often as we can & the food is delicious.",
+    },
+    ];
+
+    // ELEMENTS
+    const img = document.querySelector(".carousel__testimonial--img");
+    const author = document.querySelector(".carousel__testimonial--author");
+    const job = document.querySelector(".carousel__testimonial--job");
+    const info = document.querySelector(".carousel__testimonial--text");
+
+    const btnRight = document.querySelector('.carousel-btn--right');
+    const btnLeft = document.querySelector('.carousel-btn--left');
+
+    const dotContainer = document.querySelector('.dots')
+
+    let currentItem = 0; 
+
+    window.addEventListener('DOMContentLoaded', () => {
+        renderPerson()
+        createDots()
+    });
+
+    // FUNCTIONS:
+    const renderPerson = () => {
+            const item = reviews[currentItem];
+            img.src = item.img; 
+            author.textContent = item.name;
+            job.textContent = item.job;
+            info.textContent = item.text;
+    };
+
+    const goToSlide = (slideNum) => {
+        const item = reviews[slideNum];
+            img.src = item.img; 
+            author.textContent = item.name;
+            job.textContent = item.job;
+            info.textContent = item.text;
+    }
+
+    const nextPerson = () => {
+            currentItem++;
+            if (currentItem > reviews.length - 1) currentItem = 0;
+        renderPerson();
+        activateDots(currentItem)
+    }
+
+    const prevPerson = () => {
+            currentItem--;
+            if (currentItem < 0) currentItem = reviews.length - 1;
+        renderPerson();
+        activateDots(currentItem)
+    };
+
+    const handleArrKeyClicked = (e) => {
+        if (e.key === 'ArrowLeft') prevPerson()
+        if (e.key === 'ArrowRight') nextPerson()
+    }
+    
+    const createDots = () => {
+        reviews.forEach((_, i) => {
+            dotContainer.insertAdjacentHTML('beforeend', `<button class='dot' data-slide='${i}'>&nbsp;</button>`)
+            // document.querySelectorAll('.dot').forEach((dot) => {
+            //     dot.classList.remove('dot--active')
+            // })
+            document.querySelectorAll('.dot')[0].classList.add('dot--active')
+        } )}
+
+    //❗️❗️ didn't finish https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649003#overview
+    const activateDots = (slide) => {
+    // remove the dot--active class from each dot element
+        document.querySelectorAll('.dot').forEach((dot) => {
+            dot.classList.remove('dot--active')
+        })
+
+        //💡 then select the active slide and add the dot--active class to the corresponding dot element
+        document.querySelector(`.dot[data-slide='${slide}'`).classList.add('dot--active')
+    }
+
+
+    const handleDotClicked = (e) => {
+        if(e.target.classList.contains('dot') ) {
+            const {slide} = e.target.dataset
+            goToSlide(+slide)
+            activateDots(slide)
+        }
+    }
+    
+    // EVENT HANDLERS:
+    btnRight.addEventListener('click', nextPerson);
+    btnLeft.addEventListener('click', prevPerson);
+    document.addEventListener('keydown', handleArrKeyClicked)
+    dotContainer.addEventListener('click', handleDotClicked)
+
