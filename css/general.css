@@ -63,6 +63,11 @@ Default: 9px - buttons
     --clr-primary-200: #d7c2bc;
     --clr-primary-100: #e5d6d2;
 
+    --clr-accent-blue:  #3182CE;
+    --clr-accent-red:  #E53E3E;
+    --clr-accent-yellow: #D69E2E;
+
+
     --clr-neutral-100: #fff;
     --clr-grey-700: #aaa;
     --clr-grey-200: #bbb;
@@ -379,8 +384,16 @@ Default: 9px - buttons
     margin-right: 1.6rem !important;
 }
 
+.margin-right-sm-responsive{
+    margin-right: 1.6rem;
+}
+
 .margin-top-md{
     margin-top: 3.2rem !important;
+}
+
+.margin-top-lg-responsive{
+    margin-top: 4.8rem;
 }
 
 .margin-top-md-responsive{
@@ -391,13 +404,28 @@ Default: 9px - buttons
     margin-bottom: 3.2rem;
 }
 
+.margin-top-md-responsive--neg{
+    margin-top: -3.2rem;
+}
+
 @media screen and (min-width: 40em) {
+    .margin-right-sm-responsive{
+        margin-right: 0;
+    }
     .margin-top-md-responsive{
+        margin-top: 0;
+    }
+
+    .margin-top-lg-responsive{
         margin-top: 0;
     }
 
     .margin-bottom-md-responsive{
         margin-bottom: 0;
+    }
+
+    .margin-top-md-responsive--neg{
+        margin-top: 0;
     }
 }
 

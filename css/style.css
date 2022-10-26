@@ -757,17 +757,17 @@ body{
 }
 
 .cooking-tips--img .img-tag.article{
-    background-color: #D69E2E;
+    background-color: var(--clr-accent-yellow);
     ;
 }
 
 .cooking-tips--img .img-tag.recipe{
-    background-color: #E53E3E
+    background-color: var(--clr-accent-red);
     ;
 }
 
 .cooking-tips--img .img-tag.blog{
-    background-color: #3182CE;
+    background-color: var(--clr-accent-blue);
 }
 
 .cooking-tips--img img{
@@ -794,16 +794,20 @@ body{
     width: 100%;
 }
 
-.cooking-tips-msg, .cooking-tips--footer{
+.cooking-tips-msg{
     margin-bottom: 2.4rem;
 }
 
-.cooking-tips--footer{
+.cooking-tips--body-user{
+    margin: 0 2.4rem 2.4rem 2.4rem;
+}
+
+.cooking-tips--body-user{
     display: flex;
     align-items: center;
 }
 
-.cooking-tips--footer img{
+.cooking-tips--body-user img{
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
@@ -811,14 +815,14 @@ body{
     object-position: top;
 }
 
-.cooking-tips--footer .user-name{
+.cooking-tips--body-user .user-name{
     font-size: 1.1rem;
     font-weight: var(--fw-700);
     letter-spacing: .15rem;
     text-transform: uppercase;
 }
 
-.cooking-tips--footer .date{
+.cooking-tips--body-user .date{
     font-size: 1.4rem;
     font-weight: var(--fw-300);
     background-color: #f2ebe9;
@@ -826,6 +830,81 @@ body{
     border-radius: 5rem;
     margin-left: auto;
 }
+
+.cooking-tips--footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 0;
+    margin-top: 6.4rem;
+}
+
+@media screen and (min-width: 40em) {
+    .cooking-tips--footer{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.cooking-tips--footer .btn{
+    align-self: center;
+}
+
+/**************************/
+/* NEWSLETTER SECTION */
+/**************************/
+.newsletter {
+    display: grid;
+    place-content: center;
+    background-image: linear-gradient( rgb(62, 26, 15, 0.55), rgb(62, 26, 15, 0.55)), url(/img/gallery/gallery-5.jpg);
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: attachment;
+
+    box-shadow: rgb(18 34 36 / 15%) 0px 5px 10px 0px;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.newsletter--content{
+    margin: 6.4rem;
+} 
+
+
+.newsletter-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .2rem;
+}
+
+
+@media screen and (min-width: 40em) {
+    .newsletter-form{
+        flex-direction: row;
+        gap: 1.6rem;
+    }
+}
+
+.newsletter-form input{
+    flex-basis: 30%;
+    padding: 1.5rem 3rem;
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: inherit;
+    border: none;
+    text-align: left;
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.newsletter-form input::placeholder{
+    color: var(--clr-grey-700);
+}
+
 
 
 /* - spacing system (px)
