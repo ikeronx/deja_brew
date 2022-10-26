@@ -35,7 +35,7 @@ body {
 }
 
 strong{
-    font-weight: var(--fw-semi-bold);
+    font-weight: var(--fw-700);
 }
 
 /* Set core body defaults */

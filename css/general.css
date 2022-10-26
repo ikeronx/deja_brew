@@ -401,6 +401,9 @@ Default: 9px - buttons
     }
 }
 
+.margin-bottom-md-sm{
+    margin-bottom: 2.4rem !important;
+}
 
 .margin-bottom-sm{
     margin-bottom: 1.6rem !important;

@@ -26,7 +26,7 @@ body{
     position: relative;
     color: var(--clr-primary-100);
     height: 100vh;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.0)), url(/img/hero-2.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.3)), url(/img/hero-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: attachment;
@@ -242,7 +242,7 @@ body{
 
 @media screen and (min-width: 40em) {
     .card__content--img{
-        max-height: 420px;
+        max-height: 400px;
     }
 }
 
@@ -255,7 +255,7 @@ body{
 }
 
 .card__content--title{
-    margin:1.6rem 0 0.8rem 0;
+    margin:3.2rem 0 0.8rem 0;
 }
 
 .card__content--subtitle{
@@ -274,7 +274,7 @@ body{
     width: 85%;
     height: 1px;
     margin-block: 2.4rem;
-    border-bottom: 1px dashed var(--clr-primary-900);
+    border-bottom: .1rem dashed var(--clr-primary-900);
     opacity: 0.3;
 }
 
@@ -440,7 +440,7 @@ body{
 
 @media screen and (min-width: 40em) {
     .coffee-img{
-        transform: scale(1.2); 
+        transform: scale(1.1); 
         margin-top: 0;
         }
 }
@@ -726,6 +726,107 @@ body{
         background-color: var(--clr-primary-400);
     }
 }
+
+/**************************/
+/*  COOKING TIPS  SECTION */
+/**************************/
+.cooking-tips--body{
+    border-radius: .5rem;
+    box-shadow: rgb(18 34 36 / 15%) 0px 5px 10px 0px;
+    overflow: hidden;
+}
+
+.cooking-tips--img{
+    display: relative;
+    height: 34rem;
+    overflow: hidden;
+    margin-top: -3.2rem;
+    background-color: #3182CE;
+}
+
+.img-tag{
+    display: inline-block;  
+    transform: translate(2.4rem, 4.8rem);
+    padding: .5rem 1.5rem;
+    border-radius: .5rem;
+    text-transform: uppercase;
+    color: var(--clr-neutral-100);
+    font-size: 1.2rem;
+    letter-spacing: .15rem;
+    z-index: 2;
+}
+
+.cooking-tips--img .img-tag.article{
+    background-color: #D69E2E;
+    ;
+}
+
+.cooking-tips--img .img-tag.recipe{
+    background-color: #E53E3E
+    ;
+}
+
+.cooking-tips--img .img-tag.blog{
+    background-color: #3182CE;
+}
+
+.cooking-tips--img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cooking-tips--content, .cooking-tips--footer{
+    margin-inline: 2.4rem;
+}
+
+/*💡 pseudo horizontal dashed line */
+.cooking-tips--content{
+    position: relative;
+    padding-bottom: 2.4rem;
+} 
+
+.cooking-tips--content:after{
+    content: '';
+    position: absolute; 
+    border-bottom: .1rem dashed var(--clr-primary-900);
+    opacity: 0.3;
+    width: 100%;
+}
+
+.cooking-tips-msg, .cooking-tips--footer{
+    margin-bottom: 2.4rem;
+}
+
+.cooking-tips--footer{
+    display: flex;
+    align-items: center;
+}
+
+.cooking-tips--footer img{
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.cooking-tips--footer .user-name{
+    font-size: 1.1rem;
+    font-weight: var(--fw-700);
+    letter-spacing: .15rem;
+    text-transform: uppercase;
+}
+
+.cooking-tips--footer .date{
+    font-size: 1.4rem;
+    font-weight: var(--fw-300);
+    background-color: #f2ebe9;
+    padding: .3rem 1.3rem;
+    border-radius: 5rem;
+    margin-left: auto;
+}
+
 
 /* - spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
