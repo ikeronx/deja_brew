@@ -257,11 +257,9 @@
                     </div>
                 </section>
             </div>
-
-
-        </section>
-        <!-- /.section__container -->
-
+        </section> <!-- x TOP SECTION -->
+        
+        <!-- BOTTOM SECTION -->
         <!-- POWER DEALS SEC -->
         <section id='power-deals' class="mobile-app-sec container ">
             <div class="mobile-app__content grid grid--2-cols grid--center-v">
@@ -375,7 +373,6 @@
                     <span class="subheading subheading--clr-dark text-center">Recipes</span>
                     <h2 class="heading-secondary text-center">Cooking Tips & Recipes</h2>
                     <p class="msg--margin-bottom-md text-center">Learn cooking tips, tricks and recipes from our pastry chef.</p>
-
                     <div class="cards grid grid--3-cols">
                         <!-- ARTICLE 1-->
                         <article class="cooking-tips--body margin-bottom-md-responsive">
@@ -398,7 +395,7 @@
                         <article class="cooking-tips--body margin-bottom-md-responsive">
                             <figure class="cooking-tips--img">
                                 <span class="img-tag recipe">recipe</span>
-                                <img src="img/articles/coconut-bread.jpg" alt="picture of a banana bread">
+                                <img src="img/articles/coco-bread.jpeg" alt="picture of a banana bread">
                             </figure>
                             <header class="cooking-tips--content">
                                 <h3 class="heading-tertiary margin-top-md text-center--responsive">Hazelnut Coconut Bread</h3>
@@ -414,7 +411,7 @@
                         <article class="cooking-tips--body">
                             <figure class="cooking-tips--img">
                                 <span class="img-tag blog">blog</span>
-                                <img loading="lazy" src="img/articles/article-4.jpg" alt="picture of a banana bread">
+                                <img loading="lazy" src="img/articles/article-3-copy.jpg" alt="picture of a banana bread">
                             </figure>
                             <header class="cooking-tips--content">
                                 <h3 class="heading-tertiary margin-top-md text-center--responsive">Becoming a better Chef</h3>
@@ -452,8 +449,45 @@
                         </div>
                     </div>
                 </section>
+
+                <!-- SEPARATOR -->
+                <span class="separator">&nbsp;</span>
+
+                <!-- CONTACT -->
+                <section id="contact" class="text-center">
+                    <span class="subheading subheading--clr-dark text-center">contact</span>
+                    <h2 class="heading-secondary text-center">Write us a message</h2>
+                    <p class="msg--margin-bottom-md text-center">Have a question about our services, or just want to <br> know how we're doing?. Drop us a line.</p>
+                        <!-- CONTACT FORM INPUTS -->
+                        <form class="contact-form--body grid grid--2-cols" name='contact-us'>
+                                <input  type="text" name='first-name' placeholder="First Name" required>
+                                <input type="text" name='last-name' placeholder="Last Name" required>
+                                <input type="number" name='Tel.' placeholder="Tel" required>
+                                <input type="email" name='contact-email' placeholder="Email" required>
+                                <textarea type="text" name="message" placeholder="Write message here..." rows="5" required></textarea>
+
+                                <div class="contact-form--btn">
+                                    <button class="btn">send message</button>
+                                </div>
+                        </form>
+                </section>
+        </section> <!-- x BOTTOM SECTION -->
+
+        <section id='power-deals' class="mobile-app-sec container ">
+            <div class="mobile-app__content grid grid--2-cols grid--center-v">
+                <div class="mobile-app__content--left">
+                    <span class="subheading margin-top-md-responsive">Power Deals</span>
+                    <h3 class="heading-tertiary--lg heading--clr-light">Buy two lattes, <br>Get two free!</h3>
+                    <p class="heading--clr-light msg--tint"> Our <strong>Pumpkin Spice Latte</strong> has been bussin', so <br> we're gonna give you a little extra.</p>
+                    <div class="dual-btns margin-top-md">
+                        <a href="#" class="btn dual-btn--margin-left margin-bottom-md-responsive"><ion-icon class='app-icon' name="logo-google-playstore"></ion-icon><span>playstore</span></a>
+                        <a href="#" class="btn"><ion-icon  class='app-icon' name="logo-apple-appstore"></ion-icon>appstore</a>
+                    </div>
+                </div>
+                    <img class='mobile-app__content--img coffee-img' loading="lazy" src="img/food/cofeee.png" alt="Barista">
+            </div>
         </section>
-        <!-- /.section__container -->
+
     </main>
 </body>
 </html>

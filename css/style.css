@@ -9,7 +9,6 @@ body{
     background-size: 100%;
     background-attachment: fixed;
     position: relative;
-    
 }
 
 @media screen and (min-width: 40em) {
@@ -857,7 +856,7 @@ body{
 .newsletter {
     display: grid;
     place-content: center;
-    background-image: linear-gradient( rgb(62, 26, 15, 0.55), rgb(62, 26, 15, 0.55)), url(/img/gallery/gallery-5.jpg);
+    background-image: linear-gradient( rgb(62, 26, 15, 0.75), rgb(62, 26, 15, 0.75)), url(https://i.pinimg.com/originals/6a/9a/b6/6a9ab61c40cce683a55749c3deae8aaf.jpg);
     background-size:cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -871,7 +870,6 @@ body{
 .newsletter--content{
     margin: 6.4rem;
 } 
-
 
 .newsletter-form{
     display: flex;
@@ -905,7 +903,39 @@ body{
     color: var(--clr-grey-700);
 }
 
+/**************************/
+/* CONTACT SECTION */
+/**************************/
+.contact-form--body{
+    gap: 3rem;
+}
 
+.contact-form--body input, .contact-form--body textarea{
+    padding: 1.5rem 3.0rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 2px 5px 0 rgb(26 47 51 / 11%);
+}
+
+.contact-form--body input::placeholder{
+    color: var(--clr-grey-700);
+}
+
+.contact-form--body *:focus{
+    outline: .1rem solid var(--clr-primary-400);
+}
+
+.contact-form--body textarea{
+    grid-column: 1 /-1;
+}
+
+.contact-form--btn{
+    grid-column: 1 /-1;
+}
 
 /* - spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
