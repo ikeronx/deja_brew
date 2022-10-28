@@ -1,8 +1,8 @@
 body{
     color: var(--clr-primary-900);
     font-family: var(--ff-secondary);
-    font-size: var(--fs-body);
-    font-weight:300;
+    font-size: 1.8rem;
+    font-weight: var(--fw-350);
     line-height: 1.6;
     text-rendering: optimizeSpeed;
     background-image: linear-gradient( rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(https://img.freepik.com/premium-photo/dark-wood-texture-background_124507-7132.jpg?w=2000);
@@ -13,7 +13,7 @@ body{
 
 @media screen and (min-width: 40em) {
     body{
-        background-image: linear-gradient(to right,  rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3)), url(https://img.freepik.com/premium-photo/dark-wood-texture-background_124507-7132.jpg?w=2000);
+        background-image: linear-gradient(to right,  rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(https://img.freepik.com/premium-photo/dark-wood-texture-background_124507-7132.jpg?w=2000);
     }
 }
 
@@ -118,7 +118,6 @@ body{
     overflow: hidden;
     border-radius: 5px;
     box-shadow: rgb(88 94 94) 0px 3px 12px -6px;
-    
 }
 
 .about-img img{
@@ -204,12 +203,6 @@ body{
         margin-bottom: 4.8rem;
         width:89%;
     }
-}
-
-.about__content--social{
-    display: flex;
-    align-self: center;
-    gap: 2.4rem;
 }
 
 /**************************/
@@ -312,10 +305,8 @@ body{
 }
 
 .numbers__block-num span.small{
-
     font-size: 3.6rem;
     transform: translateY(-30%);
- 
 }
 
 .numbers__block-text{
@@ -441,7 +432,7 @@ body{
     .coffee-img{
         transform: scale(1.1); 
         margin-top: 0;
-        }
+    }
 }
 
 /**************************/
@@ -521,7 +512,6 @@ body{
     gap: 1.2rem;
     padding: 1.2rem 1.6rem 1.2rem 1.6rem;
     border-radius: .8rem;
-
     position: absolute; 
     background-color: var(--clr-primary-400);
     line-height: 1.2;
@@ -704,7 +694,6 @@ body{
         left: 50%;
         bottom: 0;
         transform: translate(-50%, 12.8rem);
-
         display: flex;
         gap: 1.2rem;
         z-index: 2;
@@ -740,12 +729,12 @@ body{
     height: 34rem;
     overflow: hidden;
     margin-top: -3.2rem;
-    background-color: #3182CE;
+    background-color: var(--clr-neutral-100);
 }
 
 .img-tag{
     display: inline-block;  
-    transform: translate(2.4rem, 4.8rem);
+    transform: translate(2.4rem, 6rem);
     padding: .5rem 1.5rem;
     border-radius: .5rem;
     text-transform: uppercase;
@@ -861,7 +850,6 @@ body{
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: attachment;
-
     box-shadow: rgb(18 34 36 / 15%) 0px 5px 10px 0px;
     border-radius: 1rem;
     overflow: hidden;
@@ -906,6 +894,10 @@ body{
 /**************************/
 /* CONTACT SECTION */
 /**************************/
+.footer{
+    color: var(--clr-neutral-100);
+    background-color: transparent;
+}
 .contact-form--body{
     gap: 3rem;
 }
@@ -935,6 +927,71 @@ body{
 
 .contact-form--btn{
     grid-column: 1 /-1;
+}
+
+/**************************/
+/* FOOTER SECTION */
+/**************************/
+.about-footer--title{
+    margin-bottom: 3.2rem;
+}
+
+.footer-body--top{
+    margin-top: 6.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-footer--links{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+.contact-footer--links-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact-footer--links-item .item-title{
+    font-size: 1.2rem;
+    font-weight: var(--fw-700);
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+
+}
+
+.footer-link{
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    text-decoration-line: none;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #f39c12;
+}
+
+/**************************/
+/* FOOTER SECTION */
+/**************************/
+.copyright-body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.6rem;
+}
+
+.copyright-body p, .copyright-body a{
+    text-decoration: none;
+    color: #666;
+}
+
+.footer-link.back-up{
+    color: #f39c12;
+}
+
+.separator--clr{
+    border-top: 1px dashed red;
 }
 
 /* - spacing system (px)
