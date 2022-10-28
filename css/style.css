@@ -968,7 +968,7 @@ body{
     text-decoration-line: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #f39c12;
+    color: var(--clr-accent-yellow);
 }
 
 /**************************/
@@ -983,16 +983,13 @@ body{
 
 .copyright-body p, .copyright-body a{
     text-decoration: none;
-    color: #666;
+    color: var(--clr-grey-800);
 }
 
 .footer-link.back-up{
-    color: #f39c12;
+    color: var(--clr-accent-yellow);
 }
 
-.separator--clr{
-    border-top: 1px dashed red;
-}
 
 /* - spacing system (px)
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
