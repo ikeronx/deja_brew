@@ -28,24 +28,27 @@
     <title>The Grind &mdash; Best Coffee In Town</title>
 </head>
 <body>
-    <!-- <header class="header"> -->
+    <header class="header navbar">
         <!-- NAVBAR LOGO-->
-        <!-- <a href="#"><img class="header__logo" src="img/omnifood-logo.png" alt=" The Grind logo"></a> -->
+        <a href="#"><img class="header__logo navbar__logo" src="img/omnifood-logo.png" alt=" The Grind logo"></a>
         <!-- MENU ITEMS -->
-        <!-- <nav class="main-nav" aria-label="Main">
+        <nav class="main-nav" aria-label="Main">
             <ul class="main-nav__list">
-                <li><a class='main-nav__link' href="#howSec">How it works</a></li>
-                <li><a class='main-nav__link' href="#mealsSec">Meals</a></li>
-                <li><a class='main-nav__link' href="#testimonialsSec">Testimonials</a></li>
-                <li><a class='main-nav__link' href="#pricingSec">Pricing</a></li>
+                <li><a class='main-nav__link' href="#hero">Home</a></li>
+                <li><a class='main-nav__link' href="#about">About</a></li>
+                <li><a class='main-nav__link' href="#menu">Menu</a></li>
+                <li><a class='main-nav__link' href="#coooking-tips">Blog</a></li>
+                <li><a class='main-nav__link' href="#contact">contact</a></li>
             </ul>
-        </nav> -->
+        </nav>
         <!-- RESERVATION BTN -->
-        <!-- <button class='main-nav__btn btn btn--lg main-nav-cta'>Reservation</button>
-    </header> -->
+        <div class="main-nav__btn">
+            <button class='btn btn--lg main-nav-cta'>Reservation</button>
+        </div>
+    </header> 
 
     <main>
-        <section id='hero' class="section section__hero">
+        <section id='hero' class="section__hero">
             <div class="hero__content">
                 <div class="hero__content--inner">
                     <!-- <span class="hero__content--intro-left subheading ">Déjà Brew</span> -->
@@ -75,9 +78,9 @@
 			</span>
             <div class="container">
                 <!-- ABOUT SEC-->
-				<section id="about" class="grid grid--2-cols grid--center-v">
+				<section id="about" class="grid grid--2-cols grid--center-v section">
                     <div class="about-img">
-                        <img loading="lazy" src="img/cafe-inside.jpg" alt="restaurant image" />
+                        <img src="img/cafe-inside.jpg" alt="restaurant image" />
                         <span class="play-video-anim"></span>
                         <a data-fslightbox href="https://www.youtube.com/watch?v=MaR-pJPXKyc" class="play-video"
                             ><i class="fas fa-play"></i
@@ -109,7 +112,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- WHY US SEC -->
-                <section id="why-us">
+                <section id="why-us" class="section">
                     <span class="subheading clr-primary text-center">Why us</span>
                     <h2 class="heading-secondary text-center">Why do people choose us?</h2>
                     <p class="msg--margin-bottom-md text-center">Déjà Brew has received numerous awards including: Best <br>brunch from the readers of Boston Globe.</p>
@@ -137,7 +140,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- TEAM SEC-->
-                <section id="team">
+                <section id="team" class="section">
                     <span class="subheading clr-primary text-center">Team</span>
                     <h2 class="heading-secondary text-center">We are ready to serve you</h2>
                     <p class="msg--margin-bottom-md text-center">We have a combined 12&#43; years in the culinary industry, <br> we love food and we love what we do.</p>
@@ -165,7 +168,7 @@
                         <div class="card__content margin-bottom-md-responsive">
                             <div class="card__content--img">
                                 <a data-fslightbox href="img/team/david.jpg" class="play-video">
-                                    <img data-fslightbox loading="lazy"  src="img/team/david.jpg" alt="Photo of beautifully arranged food">
+                                    <img data-fslightbox src="img/team/david.jpg" alt="Photo of beautifully arranged food">
                                 </a>
                             </div>
                             <h3 class="card__content--title heading-tertiary text-center">David Lewis</h3>
@@ -182,7 +185,7 @@
                             <div class="card__content--img">
                                 <div class="card__content--img">
                                     <a data-fslightbox href="img/team/ashley.jpg" class="play-video">
-                                        <img data-fslightbox loading="lazy"  src="img/team/ashley.jpg" alt="Photo of beautifully arranged food">
+                                        <img data-fslightbox src="img/team/ashley.jpg" alt="Photo of beautifully arranged food">
                                     </a>
                                 </div>
                             </div>
@@ -202,7 +205,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- NUMBERS SEC-->
-                <section id="numbers">
+                <section id="numbers" class="section">
                     <ul class="numbers grid grid--4-cols text-center" role="list">
                         <li class="numbers__block">
                             <h3 class="numbers__block-num heading-secondary" data-count="700">700<span class="icon">+</span></h3>
@@ -227,7 +230,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- OPENING HOURS SEC -->
-                <section id="opening-hours">
+                <section id="opening-hours" class="section">
                     <div class="opening-hours--container">
                         <div class="opening-hours--content">
                             <span class="subheading">our hours</span>
@@ -260,10 +263,10 @@
         
         <!-- BOTTOM SECTION -->
         <!-- POWER DEALS SEC -->
-        <section id='power-deals' class="mobile-app-sec container ">
+        <section id='power-deals' class="mobile-app-sec container section">
             <div class="mobile-app__content grid grid--2-cols grid--center-v">
                 <div class="mobile-app__content--left">
-                    <span class="subheading margin-top-md-responsive">Power Deals</span>
+                    <span class="subheading margin-top-xl-responsive">Power Deals</span>
                     <h3 class="heading-tertiary--lg clr-light">Buy two lattes, <br>Get two free!</h3>
                     <p class="clr-light msg--tint"> Our <strong>Pumpkin Spice Latte</strong> has been bussin', so <br> we're gonna give you a little extra.</p>
                     <div class="dual-btns margin-top-md margin-bottom-md-responsive">
@@ -271,7 +274,7 @@
                         <a href="#" class="btn"><ion-icon  class='app-icon ' name="logo-apple-appstore"></ion-icon>appstore</a>
                     </div>
                 </div>
-                    <img class='mobile-app__content--img coffee-img' loading="lazy" src="img/food/cofeee.png" alt="Barista">
+                    <img class='mobile-app__content--img coffee-img' src="img/food/cofeee.png" alt="Barista">
             </div>
         </section>
 
@@ -279,52 +282,52 @@
         <section class="section__container top__section">
             <div class="container">
                 <!-- REVIEWS SEC-->
-				<section id="reviews" class="grid grid--2-cols grid--center-v">
+				<section id="reviews" class="grid grid--2-cols grid--center-v section">
                     <!-- GALLERY -->
                     <div class="gallery">
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-1.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-1.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-1.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-8.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-8.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-8.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-3.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-3.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-3.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-6.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-6.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-6.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-2.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-2.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox  src="img/gallery/gallery-2.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-4.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-4.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-4.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-9.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-9.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-9.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-7.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-7.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-7.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                         <figure class="gallery-item">
                             <a data-fslightbox href="img/gallery/gallery-5.jpg" class="play-video">
-                                <img data-fslightbox  loading="lazy" src="img/gallery/gallery-5.jpg" alt="Photo of beautifully arranged food">
+                                <img data-fslightbox src="img/gallery/gallery-5.jpg" alt="Photo of beautifully arranged food">
                             </a>
                         </figure>
                     </div>
@@ -366,7 +369,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- COOKING TIPS SEC -->
-                <section id="coooking-tips">
+                <section id="coooking-tips" class="section">
                     <span class="subheading clr-primary text-center">Recipes</span>
                     <h2 class="heading-secondary text-center">Cooking Tips & Recipes</h2>
                     <p class="msg--margin-bottom-md text-center">Learn cooking tips, tricks and recipes from our pastry chef.</p>
@@ -375,7 +378,7 @@
                         <article class="cooking-tips--body margin-bottom-md-responsive">
                             <figure class="cooking-tips--img">
                                 <span class="img-tag article">article</span>
-                                <img loading="lazy" src="img/articles/article-3.jpg" alt="picture of a banana bread">
+                                <img src="img/articles/article-3.jpg" alt="picture of a banana bread">
                             </figure>
                             <header class="cooking-tips--content">
                                 <h3 class="heading-tertiary margin-top-md text-center--responsive">Enhance your latte flavours</h3>
@@ -383,7 +386,7 @@
 									class and give it that extra zest.</p>
                             </header>
                             <footer class="cooking-tips--body-user">
-                                    <img class='margin-right-sm' loading="lazy" src="img/team/david.jpg" alt="Picture os pastry chef">
+                                    <img class='margin-right-sm' src="img/team/david.jpg" alt="Picture os pastry chef">
                                     <p class="user-name">David Lewis</p>
                                     <p class="date">01/12/23</p>
                             </footer>
@@ -399,7 +402,7 @@
                                 <p class="cooking-tips-msg text-center--responsive">Featured in Edible Boston Magazine, our pastry chef created this recipe over 10+ years ago. Learn how he did it and how you can add your own spin on it.</p>
                             </header>
                             <footer class="cooking-tips--body-user">
-                                    <img class='margin-right-sm' loading="lazy" src="img/team/david.jpg" alt="Picture os pastry chef">
+                                    <img class='margin-right-sm' src="img/team/david.jpg" alt="Picture os pastry chef">
                                     <p class="user-name">David Lewis</p>
                                     <p class="date">12/23/22</p>
                             </footer>
@@ -408,7 +411,7 @@
                         <article class="cooking-tips--body">
                             <figure class="cooking-tips--img">
                                 <span class="img-tag blog">blog</span>
-                                <img loading="lazy" src="img/articles/article-3-copy.jpg" alt="picture of a banana bread">
+                                <img src="img/articles/article-3-copy.jpg" alt="picture of a banana bread">
                             </figure>
                             <header class="cooking-tips--content">
                                 <h3 class="heading-tertiary margin-top-md text-center--responsive">Becoming a better Chef</h3>
@@ -416,7 +419,7 @@
 									make your journey just a little bit easier.</p>
                             </header>
                             <footer class="cooking-tips--body-user">
-                                    <img class='margin-right-sm' loading="lazy" src="img/team/david.jpg" alt="Picture os pastry chef">
+                                    <img class='margin-right-sm' src="img/team/david.jpg" alt="Picture os pastry chef">
                                     <p class="user-name">David Lewis</p>
                                     <p class="date">12/23/22</p>
                             </footer>
@@ -432,7 +435,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- NEWSLETTER -->
-                <section id="newsletter" class="newsletter text-center">
+                <section id="newsletter" class="newsletter text-center section">
                     <div class="newsletter--content">
                         <span class="subheading">newsletter</span>
                         <h3 class="heading-tertiary--lg opening-hours--title">Subscribe to our Newsletter</h3>
@@ -451,7 +454,7 @@
                 <span class="separator">&nbsp;</span>
 
                 <!-- CONTACT -->
-                <section id="contact" class="text-center">
+                <section id="contact" class="text-center section">
                     <span class="subheading clr-primary text-center">contact</span>
                     <h2 class="heading-secondary text-center">Write us a message</h2>
                     <p class="msg--margin-bottom-md text-center">Have a question about our services, or just want to <br> know how we're doing?. Drop us a line.</p>
@@ -468,69 +471,68 @@
                         </form>
                 </section>
         </section> <!-- x BOTTOM SECTION -->
-
-        <!-- FOOTER TOP-->
-        <footer id='footer' class="footer container">
-            <div class="footer-body--top">
-                    <div class="">Power Deals</div>
-                    <ul class="social-links" role="list">
-                        <li><ion-icon name="logo-facebook" class="social-icon clr-light"></ion-icon></li>
-                        <li><ion-icon name="logo-instagram" class="social-icon clr-light"></ion-icon></li>
-                        <li><ion-icon name="logo-twitter" class="social-icon clr-light"></ion-icon></li>
-                        <li><ion-icon name="logo-youtube" class="social-icon clr-light"></ion-icon></li>
-                    </ul>
-            </div>
-
-            <!-- SEPARATOR -->
-            <span class="separator--light">&nbsp;</span>
-
-            <!-- FOOTER BOTTOM-->
-            <div class="footer-body--bottom grid grid--3-cols">
-                <div class="subscribe-footer">
-                    <h3 class="about-footer--title heading-tertiary">Get Notifications</h3>
-                    <p class="margin-bottom-sm msg--tint">Stay up-to-date with our free monthly newsletter.</p>
-                    <form class="contact-form--body grid" name='get-notification'>
-                        <input type="email" name='contact-email' placeholder="Email address..." required>
-                        <button class="btn">subscribe to newsletter.</button>
-                    </form>
-                </div>
-                <div class="about-footer">
-                    <h3 class="about-footer--title heading-tertiary">About us</h3>
-                    <p class="text-justify margin-bottom-sm msg--tint">
-                        In 2010, Déjà Brew opened its first location in downtown Boston. Focused entirely on serving the perfect
-                        food, the cozy cafe located in the city's busy Financial District created a sensation
-                        in the area winning praise from food critics and numerous people's choice awards.
-                    </p>
-                    <a href="#" class="footer-link">read more</a>
-                </div>
-                <div class="contact-footer">
-                    <h3 class="about-footer--title heading-tertiary">Contact us</h3>
-                    <ul class="contact-footer--links" role="list">
-                        <li class="contact-footer--links-item">
-                            <span class="item-title msg--tint">call:</span>
-                            <span class="msg--tint">+1 (617) 754 43 7I</span>
-                        </li>
-                        <li class="contact-footer--links-item">
-                            <span class="item-title msg--tint">write:</span>
-                            <span class="msg--tint">dejabrew.cafe@dejabrew.com</span>
-                        </li>
-                        <li class="contact-footer--links-item">
-                            <span class="item-title msg--tint">find us:</span>
-                            <span class="msg--tint">700 BC, Boston, USA</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
     </main>
 
-    <!-- SEPARATOR -->
-    <span class="separator--light">&nbsp;</span>
+    <!-- FOOTER TOP-->
+    <footer id='footer' class="footer container section">
+        <div class="footer-body--top">
+                <div class="">Power Deals</div>
+                <ul class="social-links" role="list">
+                    <li><ion-icon name="logo-facebook" class="social-icon clr-light"></ion-icon></li>
+                    <li><ion-icon name="logo-instagram" class="social-icon clr-light"></ion-icon></li>
+                    <li><ion-icon name="logo-twitter" class="social-icon clr-light"></ion-icon></li>
+                    <li><ion-icon name="logo-youtube" class="social-icon clr-light"></ion-icon></li>
+                </ul>
+        </div>
 
-    <!-- COPYRIGHT -->
-    <footer id='footer' class="footer container">
-        <div class="copyright-body">
-                <p class="">Coded and designed by <a href="https://ikeronx.github.io/portfolio-v2/" target="blank">Keron Williams</a>. All rights reserved.</p>
-                <a href="#hero" class="footer-link back-up">back to top</a>
+        <!-- SEPARATOR -->
+        <span class="separator--light">&nbsp;</span>
+
+        <!-- FOOTER BOTTOM-->
+        <div class="footer-body--bottom grid grid--3-cols">
+            <div class="subscribe-footer">
+                <h3 class="subscribe-footer--title heading-tertiary">Get Notifications</h3>
+                <p class="subscribe-footer--msg msg--tint">Stay up-to-date with our free monthly newsletter.</p>
+                <form class="contact-form--body grid" name='get-notification'>
+                    <input type="email" name='contact-email' placeholder="Email address..." required>
+                    <button class="btn">subscribe to newsletter.</button>
+                </form>
+            </div>
+            <div class="about-footer">
+                <h3 class="about-footer--title heading-tertiary">About us</h3>
+                <p class="text-justify margin-bottom-sm msg--tint">
+                    In 2010, Déjà Brew opened its first location in downtown Boston. Focused entirely on serving the perfect
+                    food, the cozy cafe located in the city's busy Financial District created a sensation
+                    in the area winning praise from food critics and numerous people's choice awards.
+                </p>
+                <a href="#" class="footer-link">read more</a>
+            </div>
+            <div class="contact-footer">
+                <h3 class="about-footer--title heading-tertiary">Contact us</h3>
+                <ul class="contact-footer--links" role="list">
+                    <li class="contact-footer--links-item">
+                        <span class="item-title msg--tint">call:</span>
+                        <span class="msg--tint">+1 (617) 754 43 7I</span>
+                    </li>
+                    <li class="contact-footer--links-item">
+                        <span class="item-title msg--tint">write:</span>
+                        <span class="msg--tint">dejabrew.cafe@dejabrew.com</span>
+                    </li>
+                    <li class="contact-footer--links-item">
+                        <span class="item-title msg--tint">find us:</span>
+                        <span class="msg--tint">700 BC, Boston, MA</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- SEPARATOR -->
+        <span class="separator--light">&nbsp;</span>
+
+        <!-- COPYRIGHT -->
+        <div id='copyright' class="copyright-body">
+            <p class="margin-bottom-md-responsive text-center--responsive">Coded and designed by <a href="https://ikeronx.github.io/portfolio-v2/" target="blank">Keron Williams</a>. All rights reserved.</p>
+            <a href="#hero" class="footer-link back-up">back to top</a>
         </div>
     </footer>
 </body>

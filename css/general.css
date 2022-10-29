@@ -79,9 +79,9 @@ Default: .5rem
 
 
     --clr-neutral-100: #fff;
+    --clr-grey-800: #666;
     --clr-grey-700: #aaa;
     --clr-grey-200: #bbb;
-    --clr-grey-800: #666;
     
     --ff-primary: 'Playfair Display', serif;
     /* --ff-secondary: 'Inter', sans-serif; */
@@ -243,7 +243,7 @@ Default: .5rem
     display: inline-block;
     width: 100%;
     height: 1px;
-    border-top: 1px dashed #ddd;
+    border-top: 1px dashed #ccc;
     opacity: .3;
     border-radius: 100px;
     margin-block: 6.4rem;
@@ -259,7 +259,7 @@ Default: .5rem
 
 .heading-primary{
     font-size: 4.8rem;
-    font-weight: var(--fw-500);
+    font-weight: var(--fw-600);
 }
 
 @media screen and (min-width: 40em) {
@@ -398,6 +398,10 @@ Default: .5rem
     margin-top: 4.8rem;
 }
 
+.margin-top-xl-responsive{
+    margin-top: 6.4rem;
+}
+
 .margin-top-md-responsive{
     margin-top: 3.2rem;
 }
@@ -429,6 +433,10 @@ Default: .5rem
 
     .margin-top-lg-responsive{
         margin-top: 0;
+    }
+
+    .margin-top-xl-responsive{
+        margin-top: 0rem;
     }
 
     .margin-bottom-md-responsive{
@@ -483,4 +491,3 @@ Default: .5rem
 .clr-primary{
     color: var(--clr-primary-400);
 }
-

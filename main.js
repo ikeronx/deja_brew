@@ -4,6 +4,79 @@
 import 'fslightbox';
 
 /**************************/
+/* STICKY NAV */
+/**************************/
+const navbar = document.querySelector('.navbar')
+const sectionHeroEl = document.querySelector('#hero')
+const sectionFeaturedElHeight = document.querySelector('#about').getBoundingClientRect().height; 
+
+const obs = new IntersectionObserver( (entries) => {
+    const [entry] = entries
+    //* if the hero section is not inside the viewport ( (!ent.isIntersecting)) then show the sticky navigation else if it is then remove the sticky navigation
+    if (!entry.isIntersecting) {
+        navbar.style.transform = 'translateY(0)';
+		navbar.style.borderRadius = '0 0 10px 10px';
+        navbar.classList.add('sticky');
+        
+    }
+    else {
+        navbar.style.transform = 'translateY(18px)';
+		navbar.style.borderRadius = '10px';
+        navbar.classList.remove('sticky');
+    }
+}, {
+    
+    // In the viewport
+    root: null, 
+    threshold: 0, // the observer will start when the hero section is completely out of the viewport
+    rootMargin: `-${sectionFeaturedElHeight}px`,
+})
+obs.observe(sectionHeroEl) // <- the entry
+
+/**************************/
+/* NAV LINKs FADE ON HOVER */
+/**************************/
+const nav = document.querySelector('.main-nav');
+const handleHover = function (e) {
+if (e.target.classList.contains('main-nav__link')) {
+        const link = e.target;
+        const siblings = link.closest('.main-nav__list').querySelectorAll('.main-nav__link');
+        const logo = link.closest('.header').querySelector('.logo');
+
+        siblings.forEach((el) => {
+                if (el !== link) el.style.opacity = this;
+        });
+        logo.style.opacity = this
+    }
+};
+nav.addEventListener('mouseover', handleHover.bind(0.5));
+nav.addEventListener('mouseout', handleHover.bind(1));
+
+
+/**************************/
+/* REVEALING SECTIONS WHILE SCROLLING */
+const allSections = document.querySelectorAll('.section');
+
+const revealSection = function (entries, observer) {
+        const [entry] = entries;
+
+        if (!entry.isIntersecting) return;
+
+        entry.target.classList.remove('section--hidden');
+        observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+        root: null,
+        threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+        sectionObserver.observe(section);
+        section.classList.add('section--hidden');
+});
+
+/**************************/
 /* CAROUSEL */
 /**************************/
 // DATA
