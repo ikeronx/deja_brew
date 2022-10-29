@@ -77,6 +77,20 @@ allSections.forEach(function (section) {
 });
 
 /**************************/
+/* MOBILE NAV FUNCTIONALITY */
+/**************************/
+const headerEl = document.querySelector('.navbar')
+const btnNavEl = document.querySelector('.btn-mobile-nav')
+btnNavEl.addEventListener('click', function () {
+    headerEl.classList.toggle('nav-open');
+    document.querySelectorAll('.main-nav__link').forEach((link) => {
+        link.addEventListener('click', () => {
+            headerEl.classList.remove('nav-open');
+        })
+    })
+})
+
+/**************************/
 /* CAROUSEL */
 /**************************/
 // DATA
@@ -183,7 +197,6 @@ const reviews = [
         //💡 then select the active slide and add the dot--active class to the corresponding dot element
         document.querySelector(`.dot[data-slide='${slide}'`).classList.add('dot--active')
     }
-
 
     const handleDotClicked = (e) => {
         if(e.target.classList.contains('dot') ) {

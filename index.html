@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/keyframes.css">
     <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/queries.css">
 
     <!-- MAIN JS -->
     <script src="main.js" type ='module' defer></script>
@@ -30,7 +31,7 @@
 <body>
     <header class="header navbar">
         <!-- NAVBAR LOGO-->
-        <a href="#"><img class="header__logo navbar__logo" src="img/omnifood-logo.png" alt=" The Grind logo"></a>
+        <a href="#"><img class="header__logo navbar__logo logo" src="img/omnifood-logo.png" alt=" The Grind logo"></a>
         <!-- MENU ITEMS -->
         <nav class="main-nav" aria-label="Main">
             <ul class="main-nav__list">
@@ -42,9 +43,13 @@
             </ul>
         </nav>
         <!-- RESERVATION BTN -->
-        <div class="main-nav__btn">
-            <button class='btn btn--lg main-nav-cta'>Reservation</button>
-        </div>
+        <button class='btn btn--lg main-nav__res-btn'>Reservation</button>
+
+        <!-- MOBILE NAVIGATION -->
+        <button class='btn-mobile-nav'>
+            <ion-icon class='icon-mobile-nav' name="menu-outline"></ion-icon>
+            <ion-icon class='icon-mobile-nav' name="close-outline"></ion-icon>
+        </button>
     </header> 
 
     <main>
