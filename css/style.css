@@ -184,7 +184,7 @@ section{
 }
 
 .hero__content--delivered-text span{
-    color: #884835;
+    color: var(--clr-primary-400);
     font-weight: var(--fw-700);
 }
 
@@ -564,18 +564,8 @@ section{
     margin-bottom: 4.8rem;
 }
 
-@media screen and (min-width: 40em) {
-    .reviews__content{
-        grid-row: 1;
-        margin-bottom: 0;
-    }
-    .gallery{
-        grid-row: 1;
-    }
-}
-
 .carousel{
-    height: 10.15rem; 
+    height: 20.15rem; 
     max-width: 60.1rem;
     display: flex;
     align-items: center;
@@ -585,7 +575,7 @@ section{
 }
 
 .carousel__slider{
-    width:27.1rem;
+    width:60.1rem;
     border-radius: .8rem;
     display: grid;
     place-items: center;
@@ -598,45 +588,45 @@ section{
 .carousel__slide{
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    padding: 1.2rem 1.6rem 1.2rem 1.6rem;
+    gap: 9.6rem;
+    padding: 3.2rem 3.2rem 3.2rem 9.6rem;
     border-radius: .8rem;
+
     position: absolute; 
     background-color: var(--clr-primary-400);
-    line-height: 1.2;
 }
 
 .carousel__testimonial--img{
     height: 10rem;
     border-radius: .5rem;
-    transform: scale(1);
+    transform: scale(2.3);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); 
 }
 
 .carousel__testimonial--text{
-    font-size: 1rem;
+    font-size: 1.8rem;
     font-weight: var(--fw-400);
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.4rem;
 
     color:var(--clr-primary-200);
 }
 
 .carousel__testimonial--author{
-    font-size: 1rem;
+    font-size: 1.4rem;
     margin-bottom: .4rem;
     color: var(--clr-primary-250);
 }
 
 .carousel__testimonial--job{
-    font-size:1rem;
+    font-size:1.2rem;
     color: var(--clr-primary-250);
 }
 
 .carousel-btn{
-    background-color: #fff;
+    background-color: var(--clr-neutral-100);
     border: none;
-    height: 2rem;
-    width: 2rem;
+    height: 4rem;
+    width: 4rem;
     border-radius: 50%;
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
     cursor: pointer;
@@ -659,8 +649,8 @@ section{
 }
 
 .carousel-btn--icon{
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 2.4rem;
+    width: 2.4rem;
     stroke: var(--clr-primary-400);
 }
 
@@ -668,145 +658,28 @@ section{
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translate(-50%, 6.8rem);
+    transform: translate(-50%, 12.8rem);
     display: flex;
     gap: 1.2rem;
     z-index: 2;
+    /* cursor: pointer; */
 }
 
 .dot{
     border: 0;
     border-radius: 50%;
-    height: .8rem;
-    width: .8rem;
-    background-color: #e5d6d2;
+    height: 1.2rem;
+    width: 1.2rem;
+    background-color: (--clr-primary-100);
     cursor: pointer;
+
 }
 
 .dot--active{
     background-color: var(--clr-primary-400);
 }
 
-@media screen and (min-width: 40em) {
-    .carousel{
-        height: 20.15rem; 
-        max-width: 60.1rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 0;
-        position: relative;
-    }
 
-    .carousel__slider{
-        width:60.1rem;
-        border-radius: .8rem;
-        display: grid;
-        place-items: center;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 3rem;
-        gap: 7rem;
-        position: relative;
-    }
-
-    .carousel__slide{
-        display: flex;
-        align-items: center;
-        gap: 9.6rem;
-        padding: 3.2rem 3.2rem 3.2rem 9.6rem;
-        border-radius: .8rem;
-
-        position: absolute; 
-        background-color: var(--clr-primary-400);
-    }
-
-    .carousel__testimonial--img{
-        height: 10rem;
-        border-radius: .5rem;
-        transform: scale(2.3);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25); 
-    }
-
-    .carousel__testimonial--text{
-        font-size: 1.8rem;
-        font-weight: var(--fw-400);
-        margin-bottom: 2.4rem;
-
-        color:var(--clr-primary-200);
-    }
-
-    .carousel__testimonial--author{
-        font-size: 1.4rem;
-        margin-bottom: .4rem;
-        color: var(--clr-primary-250);
-    }
-
-    .carousel__testimonial--job{
-        font-size:1.2rem;
-        color: var(--clr-primary-250);
-    }
-
-    .carousel-btn{
-        background-color: #fff;
-        border: none;
-        height: 4rem;
-        width: 4rem;
-        border-radius: 50%;
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-        cursor: pointer;
-        display: grid;
-        place-items: center;
-        position: absolute;
-        z-index: 3;
-    }
-
-    .carousel-btn--right{
-        right: 0;
-        top: 50%;
-        transform: translate(50%, -50%)
-    }
-
-    .carousel-btn--left{
-        left: 0;
-        top: 50%;
-        transform: translate(-50%, -50%)
-    }
-
-    .carousel-btn--icon{
-        height: 2.4rem;
-        width: 2.4rem;
-        stroke: var(--clr-primary-400);
-    }
-
-    .dots{
-        position: absolute;
-        left: 50%;
-        bottom: 0;
-        transform: translate(-50%, 12.8rem);
-        display: flex;
-        gap: 1.2rem;
-        z-index: 2;
-        /* cursor: pointer; */
-    }
-
-    .dot{
-        border: 0;
-        border-radius: 50%;
-        height: 1.2rem;
-        width: 1.2rem;
-        background-color: #e5d6d2;
-        cursor: pointer;
-
-    }
-
-    .dot--active{
-        background-color: var(--clr-primary-400);
-    }
-}
-
-/**************************/
-/*  COOKING TIPS  SECTION */
-/**************************/
 .cooking-tips--body{
     border-radius: .5rem;
     box-shadow: rgb(18 34 36 / 15%) 0px 5px 10px 0px;
@@ -903,7 +776,7 @@ section{
 .cooking-tips--body-user .date{
     font-size: 1.4rem;
     font-weight: var(--fw-300);
-    background-color: #f2ebe9;
+    background-color: var(--clr-primary-90);
     padding: .3rem 1.3rem;
     border-radius: 5rem;
     margin-left: auto;

@@ -25,7 +25,6 @@ const obs = new IntersectionObserver( (entries) => {
         navbar.classList.remove('sticky');
     }
 }, {
-    
     // In the viewport
     root: null, 
     threshold: 0, // the observer will start when the hero section is completely out of the viewport
@@ -187,7 +186,6 @@ const reviews = [
             document.querySelectorAll('.dot')[0].classList.add('dot--active')
         } )}
 
-    //❗️❗️ didn't finish https://www.udemy.com/course/the-complete-javascript-course/learn/lecture/22649003#overview
     const activateDots = (slide) => {
     // remove the dot--active class from each dot element
         document.querySelectorAll('.dot').forEach((dot) => {
@@ -211,4 +209,3 @@ const reviews = [
     btnLeft.addEventListener('click', prevPerson);
     document.addEventListener('keydown', handleArrKeyClicked)
     dotContainer.addEventListener('click', handleDotClicked)
-
