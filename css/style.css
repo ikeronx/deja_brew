@@ -564,6 +564,17 @@ section{
     margin-bottom: 4.8rem;
 }
 
+@media screen and (min-width: 40em) {
+    .reviews__content{
+        grid-row: 1;
+        margin-bottom: 0;
+    }
+    .gallery{
+        grid-row: 1;
+    }
+}
+
+
 .carousel{
     height: 20.15rem; 
     max-width: 60.1rem;
