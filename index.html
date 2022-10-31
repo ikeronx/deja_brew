@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon
+    ================================================== -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️-0</text></svg>">
     
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +46,7 @@
             </ul>
         </nav>
         <!-- RESERVATION BTN -->
-        <button class='btn btn--lg main-nav__res-btn'>Reservation</button>
+        <button class='res-btn btn btn--lg main-nav__res-btn'>Reservation</button>
 
         <!-- MOBILE NAVIGATION -->
         <button class='btn-mobile-nav'>
@@ -59,8 +62,11 @@
                     <!-- <span class="hero__content--intro-left subheading ">Déjà Brew</span> -->
                     <h1 class="hero__content--title heading-primary">Enjoy your<br/>coffee with us</h1>
                     <p class="hero__content--message msg--tint">Boost your productivity and build your mood  <br/> with a short break in the most comfortable place.</p>
-                    <button class="btn btn--cta dual-btn--margin-left margin-bottom-md">reservation</button>
-                    <a href="#menu" class="btn btn--view-menu">view menu</a>
+                    
+                    <div class="dual-btns">
+                        <button class="res-btn btn btn--cta dual-btn--margin-left margin-bottom-md ">reservation</button>
+                        <a href="#menu" class="btn btn--view-menu">view menu</a>
+                    </div>
                 </div>
                 <div class="hero__content--delivered-coffee">
                     <div class="hero__content--delivered-imgs">
@@ -108,7 +114,6 @@
                                     <li><ion-icon name="logo-twitter" class="social-icon"></ion-icon></li>
                                     <li><ion-icon name="logo-youtube" class="social-icon"></ion-icon></li>
                                 </ul>
-                          
                         </div>
                     </div>
                 </section>
@@ -240,7 +245,7 @@
                             <h3 class="heading-tertiary--lg opening-hours--title">Opening ours</h3>
                             <p class="opening-hours--msg">Due to COVID-19 regulations, our opening times have been adjusted.</p>
                             <div class="dual-btns">
-                                <button class="btn btn--cta dual-btn--margin-left margin-bottom-md">reservation</button>
+                                <button class="res-btn btn btn--cta dual-btn--margin-left margin-bottom-md">reservation</button>
                                 <a href="#contact" class="btn">contact us</a>
                             </div>
                         </div>
@@ -271,7 +276,7 @@
                     <span class="subheading margin-top-xl-responsive">Power Deals</span>
                     <h3 class="heading-tertiary--lg clr-light">Buy two lattes, <br>Get two free!</h3>
                     <p class="clr-light msg--tint"> Our <strong>Pumpkin Spice Latte</strong> has been bussin', so <br> we're gonna give you a little extra.</p>
-                    <div class="dual-btns margin-top-md margin-bottom-md-responsive">
+                    <div class="dual-btns margin-top-md">
                         <a href="#" class="btn dual-btn--margin-left margin-bottom-md-responsive"><ion-icon class='app-icon' name="logo-google-playstore"></ion-icon><span>playstore</span></a>
                         <a href="#" class="btn"><ion-icon  class='app-icon ' name="logo-apple-appstore"></ion-icon>appstore</a>
                     </div>
@@ -537,5 +542,35 @@
             <a href="#hero" class="footer-link back-up">back to top</a>
         </div>
     </footer>
+
+    <!-- MODAL -->
+    <div class="modal hidden">
+        <button class="close-modal--btn carousel-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <h3 class="modal-header heading-tertiary text-center">Table Reservation</h3>
+        <form class="modal-form--body contact-form--body grid grid--3-cols" name='reservation'>
+            <input  type="text" name='first-name' placeholder="First Name" required>
+            <input type="text" name='last-name' placeholder="Last Name" required>
+            <input type="number" name='Tel' placeholder="Tel. Num" required>
+            <select type="number" name='contact-email' placeholder="Email" required> 
+                <option value="">1 person</option>
+                <option value="">2 persons</option>
+                <option value="">3 persons</option>
+                <option value="">4 persons</option>
+                <option value="">5 persons</option>
+                <option value="">6 or more Persons</option>
+            </select>
+            <input type="date" name="date">
+            <input type="time">
+            <textarea type="text" name="message" placeholder="Write message here..." rows="5" required></textarea>
+            <div class="modal-form--btn">
+                <button class="btn">reserve a table</button>
+            </div>
+        </form>
+      </div>
+      <div class="overlay hidden"></div>
 </body>
 </html>

@@ -574,7 +574,6 @@ section{
     }
 }
 
-
 .carousel{
     height: 20.15rem; 
     max-width: 60.1rem;
@@ -875,7 +874,9 @@ section{
     gap: 3rem;
 }
 
-.contact-form--body input, .contact-form--body textarea{
+.contact-form--body input, .contact-form--body textarea, .contact-form--body select{
+    min-width: 100%;
+    max-width: 100%;
     padding: 1.5rem 3.0rem;
     font-size: 1.4rem;
     font-family: inherit;
@@ -973,4 +974,77 @@ section{
 
 .footer-link.back-up{
     color: var(--clr-accent-yellow);
+}
+
+.modal {
+    place-content: ;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 55%;
+    padding: 6rem 6rem 3rem 6rem;
+    background-color: var(--clr-neutral-200);
+    border-radius: 1rem;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 99999;
+}
+
+.modal-header{
+    font-size: 2.4rem;
+    margin-block: 0 4.8rem;
+    line-height: 1;
+}
+
+@media screen and (min-width: 40em) {
+    .modal-header{
+        font-size: 3rem;
+    }
+}
+
+.modal-form--body{
+    margin-inline: -2rem;
+}
+
+.modal-form--btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1 /-1;
+}
+
+.show-modal {
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.75rem 3.5rem;
+    margin: 5rem 2rem;
+    border: none;
+    background-color: #fff;
+    color: #444;
+    border-radius: 10rem;
+    cursor: pointer;
+}
+
+.close-modal--btn {
+    position: absolute;
+    top: 1.2rem;
+    right: 2rem;
+    transform: translate(100%, -70%);
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index:9999;
+}
+
+/* -------------------------- */
+/* CLASSES TO MAKE MODAL WORK */
+.hidden {
+    display: none;
 }

@@ -80,6 +80,12 @@
 /* BELOW 544px (Phones) */
 /*************************************/
 @media (max-width: 34em) {
+    .dual-btns{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
     .carousel{
         height: 8.15rem; 
     }

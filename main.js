@@ -209,3 +209,32 @@ const reviews = [
     btnLeft.addEventListener('click', prevPerson);
     document.addEventListener('keydown', handleArrKeyClicked)
     dotContainer.addEventListener('click', handleDotClicked)
+
+/**************************/
+/* MODAL */
+/**************************/
+const modal = document.querySelector('.modal')
+const overlay = document.querySelector('.overlay')
+const btnCloseModal = document.querySelector('.close-modal--btn')
+const btnsOpenModal = document.querySelectorAll('.res-btn')
+
+// toggles modal on / off
+const toggleModal = () => {
+        modal.classList.toggle('hidden')
+        overlay.classList.toggle('hidden')
+}
+// opens modal
+btnsOpenModal.forEach((btn) => btn.addEventListener('click', toggleModal))
+
+// closes modal
+btnCloseModal.addEventListener('click', toggleModal)
+
+// hides overlay & click outside to close modal
+overlay.addEventListener('click', toggleModal)
+
+// closes modal by pressing the esc key
+document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                toggleModal()
+        }
+})

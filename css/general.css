@@ -32,6 +32,9 @@ Large: 1.2;
 #d7c2bc;
 #e5d6d2;
 #f2ebe9;
+#f2f6f7;
+#fffefe
+
 
 - Shades:
 #251009;
@@ -90,6 +93,7 @@ Default: .5rem
 
 
     --clr-neutral-100: #fff;
+    --clr-neutral-200: #fffefe;
     --clr-grey-850: #333;
     --clr-grey-800: #666;
     --clr-grey-700: #aaa;
