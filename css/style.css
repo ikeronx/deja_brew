@@ -913,11 +913,12 @@ section{
 
 .leaflet-popup .leaflet-popup-content {
     font-size: 1.6rem;
+    color: var(--clr-primary-900);
     }
 /* changes Leaflet default marker icon color change */
-/* img.hueChange { filter: invert(0) sepia(94%) saturate(288%) hue-rotate(130deg) brightness(90%) contrast(91%)}  */
+img.hueChange { filter: invert(0) sepia(94%) saturate(288%) hue-rotate(130deg) brightness(90%) contrast(91%)} 
 
-
+/* img.hueChange { filter: invert(23%) sepia(69%) saturate(6507%) hue-rotate(354deg) brightness(92%) contrast(122%)} */
 /**************************/
 /* FOOTER SECTION */
 /**************************/
