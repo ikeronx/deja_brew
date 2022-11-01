@@ -12,6 +12,7 @@
     "vite": "^3.1.0"
   },
   "dependencies": {
-    "fslightbox": "^3.3.1"
+    "fslightbox": "^3.3.1",
+    "leaflet.smooth_marker_bouncing": "^3.0.2"
   }
 }

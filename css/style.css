@@ -921,6 +921,11 @@ section{
 /**************************/
 /* FOOTER SECTION */
 /**************************/
+
+.subscribe-form--body{
+    margin: 0;
+}
+
 .subscribe-footer--title, 
 .about-footer--title{
     margin-bottom: 3.2rem;
@@ -998,7 +1003,7 @@ section{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 55%;
-    padding: 6rem 6rem 3rem 6rem;
+    padding: 6rem 6rem 0 6rem;
     background-color: var(--clr-primary-80);
     border-radius: 1rem;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);

@@ -2,6 +2,7 @@
 * LIGHTBOX
 */
 import 'fslightbox';
+import 'leaflet.smooth_marker_bouncing'
 
 /**************************/
 /* STICKY NAV */
@@ -134,6 +135,7 @@ const reviews = [
 
     const dotContainer = document.querySelector('.dots')
 
+    // GLOBAL VARIABLE
     let currentItem = 0; 
 
     window.addEventListener('DOMContentLoaded', () => {
@@ -223,16 +225,17 @@ const toggleModal = () => {
         modal.classList.toggle('hidden')
         overlay.classList.toggle('hidden')
 }
+
 // opens modal
 btnsOpenModal.forEach((btn) => btn.addEventListener('click', toggleModal))
 
 // closes modal
 btnCloseModal.addEventListener('click', toggleModal)
 
-// hides overlay & click outside to close modal
+// closes modal when overlay is clicked
 overlay.addEventListener('click', toggleModal)
 
-// closes modal by pressing the esc key
+// closes modal when esc key is pressed
 document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 toggleModal()
@@ -243,12 +246,8 @@ document.addEventListener('keydown', e => {
 /* MAP */
 /**************************/
 let map
-
-const coords = [42.361145, -71.057083]
-
-const flyToLocal = () => {
-    map.flyTo(coords, 19)
-}
+const coords = [42.3633, -71.0582]
+const flyToLocal = () => map.flyTo(coords, 19)
 
 map = L.map('map', {
     center: coords,
@@ -266,7 +265,7 @@ L.tileLayer(
     }
 ).addTo(map);
 
-L.marker(coords, {
+const marker = L.marker(coords, {
     icon:
     L.icon({
     iconUrl: 'https://unpkg.com/leaflet@1.0.3/dist/images/marker-icon.png',
@@ -280,7 +279,7 @@ L.marker(coords, {
     L.popup({
             maxWidth: 300,
             minWidth: 90,
-            autoClose: false,
+            autoClose: true,
             closeOnClick: false,
             className: `trip-popup`,
     })
@@ -290,4 +289,4 @@ L.marker(coords, {
     Boston MA <br>
     01876
 
-`).openPopup()
+`).toggleBouncing()
