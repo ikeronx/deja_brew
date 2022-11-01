@@ -86,23 +86,23 @@ Default: .5rem
     --clr-primary-200: #d7c2bc;
     --clr-primary-100: #e5d6d2;
     --clr-primary-90: #f2ebe9;
+    --clr-primary-80: #fffefe;
 
     --clr-accent-blue:  #3182CE;
     --clr-accent-red:  #E53E3E;
     --clr-accent-yellow: #D69E2E;
-
-
-    --clr-neutral-100: #fff;
-    --clr-neutral-200: #fffefe;
+    
     --clr-grey-850: #333;
     --clr-grey-800: #666;
     --clr-grey-700: #aaa;
     --clr-grey-200: #bbb;
     --clr-grey-100: #ccc;
+
+    --clr-neutral-100: #fff;
     
     --ff-primary: 'Playfair Display', serif;
-    /* --ff-secondary: 'Inter', sans-serif; */
     --ff-secondary: 'Josefin Sans', sans-serif;
+    /* --ff-secondary: 'Inter', sans-serif; */
 
     --ff-heading: var(--ff-primary);
     --ff-body: var(--ff-secondary);

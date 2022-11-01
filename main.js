@@ -237,4 +237,57 @@ document.addEventListener('keydown', e => {
         if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                 toggleModal()
         }
-})
+});
+
+/**************************/
+/* MAP */
+/**************************/
+let map
+
+const coords = [42.361145, -71.057083]
+
+const flyToLocal = () => {
+    map.flyTo(coords, 19)
+}
+
+map = L.map('map', {
+    center: coords,
+}).setView(coords, 13);
+
+L.tileLayer(
+    "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+    {
+    maxZoom: 19,
+    id: "mapbox/streets-v11",
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken:
+    "pk.eyJ1IjoiYmxhY2tib3gxMSIsImEiOiJjbDF3OGxkYWIwMzcwM2pwOHQwMXQ2OGM0In0.6KQYul7J6Vbh4edRpmgIaA",
+    }
+).addTo(map);
+
+L.marker(coords, {
+    icon:
+    L.icon({
+    iconUrl: 'https://unpkg.com/leaflet@1.0.3/dist/images/marker-icon.png',
+        className: 'hueChange',
+        iconSize: [50, 50],
+        popupAnchor: [0, -30],
+    })
+}).on('click', flyToLocal)
+    .addTo(map)
+    .bindPopup(
+    L.popup({
+            maxWidth: 300,
+            minWidth: 90,
+            autoClose: false,
+            closeOnClick: false,
+            className: `trip-popup`,
+    })
+)
+.setPopupContent(`
+    <strong>700 BC Red Brick Rd</strong><br> 
+    Boston MA <br>
+    01876
+
+`).openPopup()
