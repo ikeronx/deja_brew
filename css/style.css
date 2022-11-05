@@ -680,7 +680,7 @@ section{
     border-radius: 50%;
     height: 1.2rem;
     width: 1.2rem;
-    background-color: (--clr-primary-100);
+    background-color: var(--clr-primary-100);
     cursor: pointer;
 
 }
@@ -873,7 +873,7 @@ section{
 
 .contact-form--body{
     gap: 3rem;
-    margin: 3.2rem;
+    margin: 3rem 3rem 0 3.2rem;
 }
 
 .contact-form--body input, .contact-form--body textarea, .contact-form--body select{
@@ -911,20 +911,73 @@ section{
     border-radius: .5rem;
 }
 
+/* leaflet-popup */
 .leaflet-popup .leaflet-popup-content {
     font-size: 1.6rem;
     color: var(--clr-primary-900);
-    }
-/* changes Leaflet default marker icon color change */
-img.hueChange { filter: invert(0) sepia(94%) saturate(288%) hue-rotate(130deg) brightness(90%) contrast(91%)} 
+}
 
-/* img.hueChange { filter: invert(23%) sepia(69%) saturate(6507%) hue-rotate(354deg) brightness(92%) contrast(122%)} */
+/* leaflet search bar */
+.leaflet-touch .leaflet-bar {
+    background-clip: boder-box;
+    /* background-color: #555; */
+    box-shadow: none;
+    border-radius: .5rem;
+    /* padding:.6rem 3.2rem; */
+    /* max-width: 150px; */
+    font-size: 1.2rem;
+    font-family: inherit;
+    color: #000;
+    border: none;
+    text-align: left;
+    border-radius: .5rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    /* filter: invert(0) sepia(0%) saturate(0%) hue-rotate(130deg) brightness(90%) contrast(91%) */
+    /* filter: invert(90%); */
+}
+
+ul{
+    list-style-type: none;
+    /* background-color: #fff; */
+}
+
+/* changes Leaflet default marker icon color change */
+img.hueChangeTeal { filter: invert(0) sepia(94%) saturate(288%) hue-rotate(130deg) brightness(90%) contrast(91%)} 
+
+img.hueChangeOrange { filter: invert(23%) sepia(69%) saturate(6507%) hue-rotate(354deg) brightness(92%) contrast(122%)} */
+
 /**************************/
 /* FOOTER SECTION */
 /**************************/
-
 .subscribe-form--body{
-    margin: 0;
+    row-gap: 1.8rem; 
+}
+
+@media screen and (min-width: 40em) {
+    .subscribe-form--body{
+        row-gap: 1.8rem; 
+    }
+}
+
+.subscribe-form--body input{
+    min-width: 100%;
+    max-width: 100%;
+    padding: 1.5rem 3.0rem;
+    font-size: 1.4rem;
+    font-family: inherit;
+    color: inherit;
+    line-height: inherit;
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 2px 5px 0 rgb(26 47 51 / 11%);
+}
+
+.subscribe-form--body input::placeholder{
+    color: var(--clr-grey-700);
+}
+
+.subscribe-form--body *:focus{
+    outline: .1rem solid var(--clr-primary-400);
 }
 
 .subscribe-footer--title, 
