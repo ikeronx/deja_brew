@@ -294,7 +294,7 @@ L.marker(coords, markerIcon).on('click', function () {
       minWidth: 90,
       autoClose: false,
       closeOnClick: false,
-      className: 'trip-popup',
+      className: 'main-popup',
     }),
   )
   .setPopupContent(`
@@ -374,15 +374,26 @@ function showPlaces(category) {
         return;
       }
       layerGroup.clearLayers();
+      console.log(response);
       response.results.forEach((searchResult) => {
         L.marker(searchResult.latlng, {
           bounceOnAdd: true,
         }).on('click', function () {
           this.bounce(2);
-          flyToLocation(searchResult.latlng, 19);
+          flyToLocation(searchResult.latlng, 16);
         })
           .addTo(layerGroup)
-          .bindPopup(`<b>${searchResult.properties.PlaceName}</b></br>${searchResult.properties.Place_addr}`)
+          .bindPopup(
+            L.popup({
+              maxWidth: 300,
+              minWidth: 30,
+              autoClose: true,
+              closeOnClick: true,
+              className: 'places-popup',
+            }),
+          )
+          .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
+          .openPopup()
           .bounce(1)
           ._icon.classList.add('hueChangeBlue');
       });

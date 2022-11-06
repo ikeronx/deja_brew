@@ -918,6 +918,16 @@ section{
     /* background-color: var(--clr-primary-80); */
  }
 
+ .places-popup .leaflet-popup-content-wrapper {
+    border-left: 3px solid #2A4365;
+    /* border-top: 2px solid #2A4365; */
+}
+
+.main-popup .leaflet-popup-content-wrapper {
+    border-left: 3px solid var(--clr-primary-400);
+    /* border-top: 2px solid var(--clr-primary-400); */
+}
+
 
 .leaflet-popup .leaflet-popup-content {
     font-size: 1.6rem;
@@ -925,7 +935,7 @@ section{
 
 /* leaflet search bar */
 .leaflet-touch .leaflet-bar {
-    background-clip: boder-box;
+    background-clip: padding-box;
     /* background-color: #555; */
     box-shadow: none;
     border-radius: .5rem;
