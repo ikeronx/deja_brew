@@ -245,7 +245,7 @@ document.addEventListener('keydown', (e) => {
 /** *********************** */
 let map;
 const coords = [42.3633, -71.0582];
-const flyToLocation = () => map.flyTo(coords, 19);
+const flyToLocation = (markerCoords, zoomLevel) => map.flyTo(markerCoords, zoomLevel);
 
 map = L.map('map', {
   center: coords,
@@ -253,23 +253,39 @@ map = L.map('map', {
 }).setView(coords, 13);
 
 L.tileLayer(
-  'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
+  'https://api.mapbox.com/styles/v1/keron31/cla4i5g51001t15rr03ghahqv/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2Vyb24zMSIsImEiOiJjbDFpaG1yMmgwYzk2M2ltMWU3eTI5NW5nIn0.hNnKi3Dl8KiNEsZC8IR1_A',
   {
     maxZoom: 19,
-    id: 'mapbox/streets-v11',
+    // id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    accessToken:
-    'pk.eyJ1IjoiYmxhY2tib3gxMSIsImEiOiJjbDF3OGxkYWIwMzcwM2pwOHQwMXQ2OGM0In0.6KQYul7J6Vbh4edRpmgIaA',
+    // accessToken:
+    // 'pk.eyJ1IjoiYmxhY2tib3gxMSIsImEiOiJjbDF3OGxkYWIwMzcwM2pwOHQwMXQ2OGM0In0.6KQYul7J6Vbh4edRpmgIaA',
   },
 ).addTo(map);
 
 L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-L.marker(coords, {
-}).on('click', function () {
-  this.toggleBouncing();
-  flyToLocation();
+const markerIcon = {
+  icon: L.icon({
+    iconSize: [25, 41],
+    iconAnchor: [10, 41],
+    popupAnchor: [2, -40],
+    iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+  }),
+};
+
+const animatedCircleIcon = {
+  icon: L.divIcon({
+    className: 'css-icon',
+    html: '<div class="gps_ring"></div>',
+    iconSize: [18, 22],
+  }),
+};
+
+L.marker(coords, markerIcon).on('click', function () {
+  this.bounce(2);
+  flyToLocation(coords, 19);
 })
   .addTo(map)
   .bindPopup(
@@ -289,8 +305,9 @@ L.marker(coords, {
 
 
 `)
-  .openPopup()
-  .bounce()._icon.classList.add('hueChangeTeal');
+  .openPopup()._icon.classList.add('hueChangeBrown');
+L.marker(coords, animatedCircleIcon).on('click', () => flyToLocation(coords, 19))
+  .addTo(map);
 
 /** *********************** */
 /* ESRI LEAFLET FIND PLACES */
@@ -340,7 +357,7 @@ L.control.placesSelect = function (opts) {
 };
 
 L.control.placesSelect({
-  position: 'topright',
+  position: 'bottomright',
 }).addTo(map);
 
 const layerGroup = L.layerGroup().addTo(map);
@@ -360,15 +377,14 @@ function showPlaces(category) {
       response.results.forEach((searchResult) => {
         L.marker(searchResult.latlng, {
           bounceOnAdd: true,
-          // icon:
-          // L.icon({
-          //     iconUrl: 'https://unpkg.com/leaflet@1.0.3/dist/images/marker-icon.png',
-          //     // className: 'hueChange',
-          //     iconSize: [30, 30],
-          // })
+        }).on('click', function () {
+          this.bounce(2);
+          flyToLocation(searchResult.latlng, 19);
         })
           .addTo(layerGroup)
-          .bindPopup(`<b>${searchResult.properties.PlaceName}</b></br>${searchResult.properties.Place_addr}`);
+          .bindPopup(`<b>${searchResult.properties.PlaceName}</b></br>${searchResult.properties.Place_addr}`)
+          .bounce(1)
+          ._icon.classList.add('hueChangeBlue');
       });
     });
 }
@@ -419,6 +435,6 @@ searchControl.on('results', (data) => {
     }`;
     marker.bindPopup(`<p>${data.results[i].properties.LongLabel}</p>`);
     results.addLayer(marker);
-    marker.openPopup();
+    marker.openPopup()._icon.classList.add('hueChangeBrown');
   }
 });

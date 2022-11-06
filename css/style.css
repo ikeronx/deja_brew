@@ -912,9 +912,15 @@ section{
 }
 
 /* leaflet-popup */
+.leaflet-popup .leaflet-popup-content-wrapper {
+    color: var(--clr-primary-900);
+    font-family: var(--ff-secondary);
+    /* background-color: var(--clr-primary-80); */
+ }
+
+
 .leaflet-popup .leaflet-popup-content {
     font-size: 1.6rem;
-    color: var(--clr-primary-900);
 }
 
 /* leaflet search bar */
@@ -941,10 +947,40 @@ ul{
     /* background-color: #fff; */
 }
 
-/* changes Leaflet default marker icon color change */
-img.hueChangeTeal { filter: invert(0) sepia(94%) saturate(288%) hue-rotate(130deg) brightness(90%) contrast(91%)} 
+.leaflet-control-attribution.leaflet-control.esri-truncated-attribution{
+    display: none;
+}
 
-img.hueChangeOrange { filter: invert(23%) sepia(69%) saturate(6507%) hue-rotate(354deg) brightness(92%) contrast(122%)} */
+/* changes Leaflet default marker icon color change */
+img.hueChangeBrown { filter: brightness(0) saturate(100%) invert(22%) sepia(10%) saturate(7364%) hue-rotate(341deg) brightness(96%) contrast(90%)} 
+
+img.hueChangeBlue { filter: brightness(0) saturate(100%) invert(21%) sepia(72%) saturate(425%) hue-rotate(175deg) brightness(92%) contrast(91%);} 
+
+.gps_ring {
+    border: 3px solid var(--clr-primary-400);
+    -webkit-border-radius: 40px;
+    height: 50px;
+    width: 50px;
+    -webkit-animation: pulsate 1s ease-out; 
+    -webkit-animation-iteration-count: infinite;
+    margin-top: -19px;
+    margin-left: -14px;
+}
+
+@-webkit-keyframes pulsate {
+    0% {
+    -webkit-transform: scale(0.1, 0.1);
+    opacity: 0;
+    }
+    50% {
+    opacity: 1;
+    }
+    100% {
+    -webkit-transform: scale(1.2, 1.2);
+    opacity: 0;
+    }
+}
+
 
 /**************************/
 /* FOOTER SECTION */
@@ -1085,6 +1121,7 @@ img.hueChangeOrange { filter: invert(23%) sepia(69%) saturate(6507%) hue-rotate(
     justify-content: center;
     align-items: center;
     grid-column: 1 /-1;
+    margin-bottom: 3.2rem;
 }
 
 .show-modal {
