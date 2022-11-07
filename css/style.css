@@ -104,7 +104,7 @@ section{
     margin-top: -9.6rem;
     position: relative;
     color: var(--clr-primary-100);
-    height: 100vh;
+    height: 102vh;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9), rgba(34, 34, 34, 0.3)), url(/img/hero-2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -915,7 +915,7 @@ section{
 .leaflet-popup .leaflet-popup-content-wrapper {
     color: var(--clr-primary-900);
     font-family: var(--ff-secondary);
-    /* background-color: var(--clr-primary-80); */
+    /* ===background-color: var(--clr-primary-80); */
  }
 
  .places-popup .leaflet-popup-content-wrapper {

@@ -13,21 +13,21 @@ const sectionFeaturedElHeight = document.querySelector('#about').getBoundingClie
 
 const obs = new IntersectionObserver((entries) => {
   const [entry] = entries;
-  //* if the hero section is not inside the viewport ( (!ent.isIntersecting)) then show the sticky navigation else if it is then remove the sticky navigation
-  if (!entry.isIntersecting) {
-    navbar.style.transform = 'translateY(0)';
-    navbar.style.borderRadius = '0 0 10px 10px';
-    navbar.classList.add('sticky');
-  } else {
+  //* if hero section is not inside the viewport ( (!ent.isIntersecting)) then show the sticky navigation else if it is then remove the sticky navigation
+  if (entry.isIntersecting) {
     navbar.style.transform = 'translateY(18px)';
     navbar.style.borderRadius = '10px';
     navbar.classList.remove('sticky');
+  } else {
+    navbar.style.transform = 'translateY(0px)';
+    navbar.style.borderRadius = '0 0 10px 10px';
+    navbar.classList.add('sticky');
   }
 }, {
   // In the viewport
   root: null,
   threshold: 0, // the observer will start when the hero section is completely out of the viewport
-  rootMargin: `-${sectionFeaturedElHeight}px`,
+  // rootMargin: `-${sectionFeaturedElHeight}px`,
 });
 obs.observe(sectionHeroEl); // <- the entry
 
@@ -379,7 +379,7 @@ function showPlaces(category) {
         L.marker(searchResult.latlng, {
           bounceOnAdd: true,
         }).on('click', function () {
-          this.bounce(2);
+          this.bounce(1);
           flyToLocation(searchResult.latlng, 16);
         })
           .addTo(layerGroup)
