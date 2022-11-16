@@ -30,6 +30,12 @@ section{
 /**************************/
 /* NAVIGATION SECTION */
 /**************************/
+.logo{
+    max-width: 18rem;
+    margin-bottom: 0; 
+}
+
+
 .navbar{
     position: relative;
     display: flex;
@@ -90,6 +96,7 @@ section{
 .icon-mobile-nav{
     font-size: 4.8rem;
     color: var(--clr-primary-400);
+    vertical-align: middle;
 }
 
 .icon-mobile-nav[name="close-outline"]{
@@ -126,7 +133,6 @@ section{
         transform: translate(-50%, -45%);
     }
 }
-
 
 .hero__content--title{
     color: var(--clr-neutral-100);
@@ -403,6 +409,17 @@ section{
     font-weight: var(--fw-700);
     text-transform: uppercase;
     letter-spacing: 0.2rem;
+}
+
+/**************************/
+/*  MENU SECTION */
+/**************************/
+.menu-btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:1.6rem;
+    margin-top: 3.2rem;
 }
 
 /**************************/
@@ -1168,4 +1185,11 @@ img.hueChangeBlue { filter: brightness(0) saturate(100%) invert(21%) sepia(72%) 
 /* CLASSES TO MAKE MODAL WORK */
 .hidden {
     display: none;
+}
+
+.leaflet-interactive { 
+    stroke: linear-gradient(-86deg, #EEF85B 5%, #7AEC8D 53%, #09E5C3 91%);
+    fill: none;
+    stroke-dasharray: 10,10; 
+    stroke-width: 2; 
 }

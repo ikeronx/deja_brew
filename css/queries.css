@@ -80,6 +80,10 @@
 /* BELOW 544px (Phones) */
 /*************************************/
 @media (max-width: 34em) {
+    .navbar{
+        margin-inline: 0;
+    }
+    
     .dual-btns{
         display: flex;
         flex-direction: column;
