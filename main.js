@@ -448,12 +448,67 @@ searchControl.on('results', (data) => {
 });
 
 /** *********************** */
+/* LEAFLET ROUTING */
+/** *********************** */
+L.Routing.control({
+  position: 'topright',
+  show: false,
+  waypoints: [null],
+  showAlternatives: true,
+  lineOptions: {
+    styles: [{ color: '#7B341E', opacity: 1, weight: 5 }],
+  },
+  altLineOptions: {
+    styles: [
+      { color: '955d4b', opacity: 0.15, weight: 9 },
+      { color: 'white', opacity: 0.8, weight: 6 },
+      { color: '955d4b', opacity: 0.5, weight: 6 },
+    ],
+  },
+  createMarker: (i, wp) => {
+    if (i === 0) {
+      return L.marker(wp.latLng, {
+        icon: L.icon.pulse({
+          iconUrl: 'https://unpkg.com/leaflet@1.9.2/dist/images/marker-icon-2x.png',
+          color: '#7B341E',
+          fillColor: '#7B341E',
+        }),
+        draggable: true,
+        bounceOnAdd: false,
+        bounceOnAddOptions: {
+          duration: 1000,
+          height: 800,
+        },
+
+      });
+    }
+    return L.marker(wp.latLng, {
+      icon: L.icon({
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+        className: 'hueChangeBrown',
+      }),
+      draggable: true,
+      bounceOnAdd: false,
+      bounceOnAddOptions: {
+        duration: 1000,
+        height: 800,
+      },
+    });
+  },
+  routeWhileDragging: true,
+  geocoder: L.Control.Geocoder.nominatim(),
+}).addTo(map);
+
+/** *********************** */
 /* ESRI LEAFLET FIND A ROUTE */
 /** *********************** */
 const directions = document.createElement('div');
 directions.id = 'directions';
 directions.innerHTML = 'Click on the map to create a start and end for the route.';
-document.body.appendChild(directions);
+// document.body.appendChild(directions);
 
 const startLayerGroup = L.layerGroup().addTo(map);
 const endLayerGroup = L.layerGroup().addTo(map);
@@ -573,58 +628,3 @@ map.on('dblclick', (e) => {
     updateRoute();
   }
 });
-
-/** *********************** */
-/* LEAFLET ROUTING */
-/** *********************** */
-L.Routing.control({
-  position: 'topright',
-  show: false,
-  waypoints: [null],
-  showAlternatives: true,
-  lineOptions: {
-    styles: [{ color: '#7B341E', opacity: 1, weight: 5 }],
-  },
-  altLineOptions: {
-    styles: [
-      { color: '955d4b', opacity: 0.15, weight: 9 },
-      { color: 'white', opacity: 0.8, weight: 6 },
-      { color: '955d4b', opacity: 0.5, weight: 6 },
-    ],
-  },
-  createMarker: (i, wp) => {
-    if (i === 0) {
-      return L.marker(wp.latLng, {
-        icon: L.icon.pulse({
-          iconUrl: 'https://unpkg.com/leaflet@1.9.2/dist/images/marker-icon-2x.png',
-          color: '#7B341E',
-          fillColor: '#7B341E',
-        }),
-        draggable: true,
-        bounceOnAdd: false,
-        bounceOnAddOptions: {
-          duration: 1000,
-          height: 800,
-        },
-
-      });
-    }
-    return L.marker(wp.latLng, {
-      icon: L.icon({
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-        className: 'hueChangeBrown',
-      }),
-      draggable: true,
-      bounceOnAdd: false,
-      bounceOnAddOptions: {
-        duration: 1000,
-        height: 800,
-      },
-    });
-  },
-  routeWhileDragging: true,
-  geocoder: L.Control.Geocoder.nominatim(),
-}).addTo(map);
