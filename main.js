@@ -264,7 +264,7 @@ L.tileLayer(
   },
 ).addTo(map);
 
-L.control.zoom({ position: 'bottomleft' }).addTo(map);
+L.control.zoom({ position: 'bottomright' }).addTo(map);
 
 const markerIcon = {
   icon: L.icon({
@@ -307,109 +307,14 @@ L.marker(coords, markerIcon).on('click', function () {
 L.marker(coords, animatedCircleIcon).on('click', () => flyToLocation(coords, 19))
   .addTo(map);
 
-/** *********************** */
-/* ESRI LEAFLET FIND PLACES */
-/** *********************** */
-const apiKey = 'AAPKdec506a2a45242168858f4b1bdd8bc83U3L-BFCyxIRNCMccr-A9Ww_dzna7wRD9H-Ap3GNvX8ZF6RBh9hXKqMgBFezUMC7a';
-
-L.Control.PlacesSelect = L.Control.extend({
-  onAdd(map) {
-    const placeCategories = [
-      ['', 'Find places nearby'],
-      ['Coffee shop', 'Coffee shop'],
-      ['Airport', 'Airport'],
-      ['Nightlife Spot', 'Nightlife Spot'],
-      ['Arts and Entertainment', 'Arts & Entertainment'],
-      ['Shops and Service', 'Shops & Service'],
-      ['Gas station', 'Gas station'],
-      ['Travel and Transport', 'Travel & Transport'],
-      ['Train station', 'Train station'],
-      ['Food', 'Food'],
-      ['Hotel', 'Hotel'],
-      ['Parks and Outdoors', 'Parks & Outdoors'],
-      ['Hospital', 'Hospital'],
-    ];
-
-    const select = L.DomUtil.create('select', '');
-    select.setAttribute('id', 'optionsSelect');
-    select.setAttribute('class', 'btn');
-    select.setAttribute('style', 'padding:16px 3.2px;text-align:center;max-width: 250px;');
-    // select.setAttribute("style", "font-size: 18px;color:white;font-family:Josefin Sans;padding:4px 8px;background-color:#7B341E;");
-
-    placeCategories.forEach((category) => {
-      const option = L.DomUtil.create('option');
-      option.value = category[0];
-      option.innerHTML = category[1];
-      select.appendChild(option);
-    });
-    return select;
-  },
-
-  onRemove(map) {
-    // Nothing to do here
-  },
-});
-
-L.control.placesSelect = function (opts) {
-  return new L.Control.PlacesSelect(opts);
-};
-
-L.control.placesSelect({
-  position: 'bottomright',
-}).addTo(map);
-
-const layerGroup = L.layerGroup().addTo(map);
-
-function showPlaces(category) {
-  L.esri.Geocoding
-    .geocode({
-      apikey: apiKey,
-    })
-    .category(category)
-    .nearby(map.getCenter(), 10)
-    .run((error, response) => {
-      if (error) {
-        return;
-      }
-      layerGroup.clearLayers();
-      response.results.forEach((searchResult) => {
-        L.marker(searchResult.latlng, {
-          bounceOnAdd: true,
-        }).on('click', function () {
-          this.bounce(3);
-          flyToLocation(searchResult.latlng, 16);
-        })
-          .addTo(layerGroup)
-          .bindPopup(
-            L.popup({
-              maxWidth: 300,
-              minWidth: 30,
-              autoClose: true,
-              closeOnClick: true,
-              className: 'places-popup',
-            }),
-          )
-          .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
-          .openPopup()
-          .bounce(1)
-          ._icon.classList.add('hueChangeBlue');
-      });
-    });
-}
-
-const select = document.getElementById('optionsSelect');
-select.addEventListener('change', () => {
-  if (select.value !== '') {
-    showPlaces(select.value);
-  }
-});
-
 /** ******************************** */
 /* ESRI LEAFLET SEARCH FOR PLACES */
 /** ******************************** */
+const apiKey = 'AAPKdec506a2a45242168858f4b1bdd8bc83U3L-BFCyxIRNCMccr-A9Ww_dzna7wRD9H-Ap3GNvX8ZF6RBh9hXKqMgBFezUMC7a';
+
 // create the geocoding control and add it to the map
 const searchControl = L.esri.Geocoding.geosearch({
-  position: 'topleft',
+  position: 'topright',
   placeholder: 'Find address or place',
   useMapBounds: false,
 
@@ -444,6 +349,99 @@ searchControl.on('results', (data) => {
     marker.bindPopup(`<p>${data.results[i].properties.LongLabel}</p>`);
     marker.openPopup()._icon.classList.add('hueChangeBrown');
     results.addLayer(marker);
+  }
+});
+
+/** *********************** */
+/* ESRI LEAFLET FIND PLACES */
+/** *********************** */
+L.Control.PlacesSelect = L.Control.extend({
+  onAdd(map) {
+    const placeCategories = [
+      ['', 'Find places nearby'],
+      ['Coffee shop', 'Coffee shop'],
+      ['Airport', 'Airport'],
+      ['Nightlife Spot', 'Nightlife Spot'],
+      ['Arts and Entertainment', 'Arts & Entertainment'],
+      ['Shops and Service', 'Shops & Service'],
+      ['Gas station', 'Gas station'],
+      ['Travel and Transport', 'Travel & Transport'],
+      ['Train station', 'Train station'],
+      ['Food', 'Food'],
+      ['Hotel', 'Hotel'],
+      ['Parks and Outdoors', 'Parks & Outdoors'],
+      ['Hospital', 'Hospital'],
+    ];
+
+    const select = L.DomUtil.create('select', '');
+    select.setAttribute('id', 'optionsSelect');
+    select.setAttribute('style', 'padding:16px 3.2px;text-align:center;max-width: 250px;');
+
+    placeCategories.forEach((category) => {
+      const option = L.DomUtil.create('option');
+      option.value = category[0];
+      option.innerHTML = category[1];
+      select.appendChild(option);
+    });
+    return select;
+  },
+
+  onRemove(map) {
+    // Nothing to do here
+  },
+});
+
+L.control.placesSelect = function (opts) {
+  return new L.Control.PlacesSelect(opts);
+};
+
+L.control.placesSelect({
+  position: 'topright',
+}).addTo(map);
+
+const layerGroup = L.layerGroup().addTo(map);
+
+function showPlaces(category) {
+  L.esri.Geocoding
+    .geocode({
+      apikey: apiKey,
+    })
+    .category(category)
+    .nearby(map.getCenter(), 10)
+    .run((error, response) => {
+      if (error) {
+        return;
+      }
+      layerGroup.clearLayers();
+      response.results.forEach((searchResult) => {
+        L.marker(searchResult.latlng, {
+          bounceOnAdd: true,
+        }).on('click', function () {
+          this.bounce(1);
+          flyToLocation(searchResult.latlng, 16);
+        })
+          .addTo(layerGroup)
+          .bindPopup(
+            L.popup({
+              maxWidth: 300,
+              minWidth: 30,
+              autoClose: true,
+              closeOnClick: true,
+              className: 'places-popup',
+            }),
+          )
+          .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
+          .openPopup()
+          .bounce(1)
+          ._icon.classList.add('hueChangeBlue');
+      });
+    });
+}
+
+const select = document.getElementById('optionsSelect');
+select.addEventListener('change', () => {
+  if (select.value !== '') {
+    showPlaces(select.value);
   }
 });
 
@@ -602,7 +600,7 @@ map.on('dblclick', (e) => {
     )
       .on('dblclick', function () {
         this.remove();
-        this.bounce(3);
+        this.bounce(2);
         flyToLocation(searchResult.latlng, 16);
       })
       .addTo(endLayerGroup)

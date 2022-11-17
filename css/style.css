@@ -423,10 +423,17 @@ section{
 
 .menu-btn{
     background-color: transparent;
+    color: var(--clr-primary-900);
+}
+
+.menu-btn:hover, 
+.menu-btn:active{
+    color: var(--clr-neutral-100);
 }
 
 .menu-btn--active{
     background-color: var(--clr-primary-400);
+    color: var(--clr-neutral-100);
 }
 
 .menu-list{
@@ -999,7 +1006,6 @@ section{
     /* border-top: 2px solid var(--clr-primary-400); */
 }
 
-
 .leaflet-popup .leaflet-popup-content {
     font-size: 1.6rem;
 }
@@ -1030,6 +1036,43 @@ ul{
 
 .leaflet-control-attribution.leaflet-control.esri-truncated-attribution{
     display: none;
+}
+
+select#optionsSelect{
+    display: grid;
+    place-items: center;
+    width: 3.33rem;
+    height: 1rem;
+    margin-top: 2rem;
+    backdrop-filter: blur(1rem);
+    z-index: 0;
+    cursor: pointer;
+  }
+  
+  #optionsSelect{
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: var(--fw-500);
+    color: #fff;
+    border: none;
+    border-radius: 0.3rem;
+    appearance: none;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='48' height='36' viewBox='0 0 48 36' fill='rgb(28,28,28)'%3E%3Crect x='16' y='12' width='16' height='2' /%3E%3Crect x='16' y='17' width='16' height='2' /%3E%3Crect x='16' y='22' width='16' height='2' /%3E%3C/svg>");
+  
+  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 4.5em;
+  }
+
+/* Routing control */
+.leaflet-routing-container{
+    z-index: 0;
+    cursor: pointer;
+    transform: translateY(5%);
 }
 
 /* changes Leaflet default marker icon color change */
