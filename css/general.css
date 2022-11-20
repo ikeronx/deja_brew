@@ -352,6 +352,7 @@ Default: .5rem
     font-family: inherit;
     transition: all 0.3s;
     background-color: var(--clr-primary-400);
+    
 }
 
 .btn.btn--view-menu:link, 
