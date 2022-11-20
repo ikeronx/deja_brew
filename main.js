@@ -9,7 +9,6 @@ import 'leaflet.smooth_marker_bouncing';
 /** *********************** */
 const navbar = document.querySelector('.navbar');
 const sectionHeroEl = document.querySelector('#hero');
-const sectionFeaturedElHeight = document.querySelector('#about').getBoundingClientRect().height;
 
 const obs = new IntersectionObserver((entries) => {
   const [entry] = entries;
@@ -27,7 +26,6 @@ const obs = new IntersectionObserver((entries) => {
   // In the viewport
   root: null,
   threshold: 0, // the observer will start when the hero section is completely out of the viewport
-  // rootMargin: `-${sectionFeaturedElHeight}px`,
 });
 obs.observe(sectionHeroEl); // <- the entry
 
