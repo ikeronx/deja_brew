@@ -250,11 +250,8 @@ L.tileLayer(
   'https://api.mapbox.com/styles/v1/keron31/cla4i5g51001t15rr03ghahqv/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoia2Vyb24zMSIsImEiOiJjbDFpaG1yMmgwYzk2M2ltMWU3eTI5NW5nIn0.hNnKi3Dl8KiNEsZC8IR1_A',
   {
     maxZoom: 19,
-    // id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
-    // accessToken:
-    // 'pk.eyJ1IjoiYmxhY2tib3gxMSIsImEiOiJjbDF3OGxkYWIwMzcwM2pwOHQwMXQ2OGM0In0.6KQYul7J6Vbh4edRpmgIaA',
   },
 ).addTo(map);
 
