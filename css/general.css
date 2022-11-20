@@ -327,14 +327,6 @@ Default: .5rem
     margin-bottom: 1.6rem;
 }
 
-/* .subheading:before {
-    content:'\00a0\00a0\00a0\00a0';
-    color: var(--clr-primary-400);
-    text-decoration: line-through;
-    text-decoration-thickness: 0.3rem;
-    margin: auto 1.6rem 0 0;
-} */
-
 .subheading--clr-dark{
     color: var(--clr-primary-900);
 }

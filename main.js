@@ -179,20 +179,16 @@ const handleArrKeyClicked = (e) => {
 const createDots = () => {
   reviews.forEach((_, i) => {
     dotContainer.insertAdjacentHTML('beforeend', `<button class='dot' data-slide='${i}'>&nbsp;</button>`);
-    // document.querySelectorAll('.dot').forEach((dot) => {
-    //     dot.classList.remove('dot--active')
-    // })
     document.querySelectorAll('.dot')[0].classList.add('dot--active');
   });
 };
 
 const activateDots = (slide) => {
-  // remove the dot--active class from each dot element
   document.querySelectorAll('.dot').forEach((dot) => {
     dot.classList.remove('dot--active');
   });
 
-  // 💡 then select the active slide and add the dot--active class to the corresponding dot element
+  // 💡 select the active slide and add the dot--active class to the corresponding dot element
   document.querySelector(`.dot[data-slide='${slide}'`).classList.add('dot--active');
 };
 
@@ -448,181 +444,181 @@ select.addEventListener('change', () => {
 /** *********************** */
 /* LEAFLET ROUTING */
 /** *********************** */
-L.Routing.control({
-  position: 'topright',
-  show: false,
-  waypoints: [null],
-  showAlternatives: true,
-  lineOptions: {
-    styles: [{ color: '#7B341E', opacity: 1, weight: 5 }],
-  },
-  altLineOptions: {
-    styles: [
-      { color: '955d4b', opacity: 0.15, weight: 9 },
-      { color: 'white', opacity: 0.8, weight: 6 },
-      { color: '955d4b', opacity: 0.5, weight: 6 },
-    ],
-  },
-  createMarker: (i, wp) => {
-    if (i === 0) {
-      return L.marker(wp.latLng, {
-        icon: L.icon.pulse({
-          iconUrl: 'https://unpkg.com/leaflet@1.9.2/dist/images/marker-icon-2x.png',
-          color: '#7B341E',
-          fillColor: '#7B341E',
-        }),
-        draggable: true,
-        bounceOnAdd: false,
-        bounceOnAddOptions: {
-          duration: 1000,
-          height: 800,
-        },
+// L.Routing.control({
+//   position: 'topright',
+//   show: false,
+//   waypoints: [null],
+//   showAlternatives: true,
+//   lineOptions: {
+//     styles: [{ color: '#7B341E', opacity: 1, weight: 5 }],
+//   },
+//   altLineOptions: {
+//     styles: [
+//       { color: '955d4b', opacity: 0.15, weight: 9 },
+//       { color: 'white', opacity: 0.8, weight: 6 },
+//       { color: '955d4b', opacity: 0.5, weight: 6 },
+//     ],
+//   },
+//   createMarker: (i, wp) => {
+//     if (i === 0) {
+//       return L.marker(wp.latLng, {
+//         icon: L.icon.pulse({
+//           iconUrl: 'https://unpkg.com/leaflet@1.9.2/dist/images/marker-icon-2x.png',
+//           color: '#7B341E',
+//           fillColor: '#7B341E',
+//         }),
+//         draggable: true,
+//         bounceOnAdd: false,
+//         bounceOnAddOptions: {
+//           duration: 1000,
+//           height: 800,
+//         },
 
-      });
-    }
-    return L.marker(wp.latLng, {
-      icon: L.icon({
-        iconSize: [25, 41],
-        iconAnchor: [12, 41],
-        popupAnchor: [1, -34],
-        iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-        className: 'hueChangeBrown',
-      }),
-      draggable: true,
-      bounceOnAdd: false,
-      bounceOnAddOptions: {
-        duration: 1000,
-        height: 800,
-      },
-    });
-  },
-  routeWhileDragging: true,
-  geocoder: L.Control.Geocoder.nominatim(),
-}).addTo(map);
+//       });
+//     }
+//     return L.marker(wp.latLng, {
+//       icon: L.icon({
+//         iconSize: [25, 41],
+//         iconAnchor: [12, 41],
+//         popupAnchor: [1, -34],
+//         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+//         className: 'hueChangeBrown',
+//       }),
+//       draggable: true,
+//       bounceOnAdd: false,
+//       bounceOnAddOptions: {
+//         duration: 1000,
+//         height: 800,
+//       },
+//     });
+//   },
+//   routeWhileDragging: true,
+//   geocoder: L.Control.Geocoder.nominatim(),
+// }).addTo(map);
 
 /** *********************** */
 /* ESRI LEAFLET FIND A ROUTE */
 /** *********************** */
-const directions = document.createElement('div');
-directions.id = 'directions';
-directions.innerHTML = 'Click on the map to create a start and end for the route.';
-// document.body.appendChild(directions);
+// const directions = document.createElement('div');
+// directions.id = 'directions';
+// directions.innerHTML = 'Click on the map to create a start and end for the route.';
+// // document.body.appendChild(directions);
 
-const startLayerGroup = L.layerGroup().addTo(map);
-const endLayerGroup = L.layerGroup().addTo(map);
-const routeLines = L.layerGroup().addTo(map);
+// const startLayerGroup = L.layerGroup().addTo(map);
+// const endLayerGroup = L.layerGroup().addTo(map);
+// const routeLines = L.layerGroup().addTo(map);
 
-let currentStep = 'start';
-let startCoords;
-let endCoords;
+// let currentStep = 'start';
+// let startCoords;
+// let endCoords;
 
-function updateRoute() {
-  // Create the arcgis-rest-js authentication object to use later.
-  const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
+// function updateRoute() {
+//   // Create the arcgis-rest-js authentication object to use later.
+//   const authentication = arcgisRest.ApiKeyManager.fromKey(apiKey);
 
-  // make the API request
-  arcgisRest
-    .solveRoute({
-      stops: [startCoords, endCoords],
-      endpoint: 'https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve',
-      authentication,
-    })
-    .then((response) => {
-      routeLines.clearLayers();
-      L.geoJSON(response.routes.geoJson).addTo(routeLines);
+//   // make the API request
+//   arcgisRest
+//     .solveRoute({
+//       stops: [startCoords, endCoords],
+//       endpoint: 'https://route-api.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World/solve',
+//       authentication,
+//     })
+//     .then((response) => {
+//       routeLines.clearLayers();
+//       L.geoJSON(response.routes.geoJson).addTo(routeLines);
 
-      const directionsHTML = response.directions[0].features.map((f) => f.attributes.text).join('<br/>');
-      directions.innerHTML = directionsHTML;
-      startCoords = null;
-      endCoords = null;
-    })
+//       const directionsHTML = response.directions[0].features.map((f) => f.attributes.text).join('<br/>');
+//       directions.innerHTML = directionsHTML;
+//       startCoords = null;
+//       endCoords = null;
+//     })
 
-    .catch((error) => {
-      console.error(error);
-      alert('There was a problem using the route service. See the console for details.');
-    });
-}
+//     .catch((error) => {
+//       console.error(error);
+//       alert('There was a problem using the route service. See the console for details.');
+//     });
+// }
 
-map.on('dblclick', (e) => {
-  const coordinates = [e.latlng.lng, e.latlng.lat];
+// map.on('dblclick', (e) => {
+//   const coordinates = [e.latlng.lng, e.latlng.lat];
 
-  if (currentStep === 'start') {
-    startLayerGroup.clearLayers();
-    endLayerGroup.clearLayers();
-    routeLines.clearLayers();
+//   if (currentStep === 'start') {
+//     startLayerGroup.clearLayers();
+//     endLayerGroup.clearLayers();
+//     routeLines.clearLayers();
 
-    L.marker(
-      e.latlng,
-      {
-        bounceOnAdd: true,
-        icon: L.icon({
-          iconSize: [25, 41],
-          iconAnchor: [10, 41],
-          popupAnchor: [2, -40],
-          iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
-        }),
-      },
-    )
-      .on('click', function () {
-        this.remove();
-        this.bounce(3);
-        flyToLocation(searchResult.latlng, 16);
-      })
-      .addTo(startLayerGroup)
-      .bindPopup(
-        L.popup({
-          maxWidth: 300,
-          minWidth: 30,
-          autoClose: true,
-          closeOnClick: true,
-          className: 'places-popup',
-        }),
-      )
-      // .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
-      .openPopup()
-      .bounce(1)
-      ._icon.classList.add('hueChangeBrown');
+//     L.marker(
+//       e.latlng,
+//       {
+//         bounceOnAdd: true,
+//         icon: L.icon({
+//           iconSize: [25, 41],
+//           iconAnchor: [10, 41],
+//           popupAnchor: [2, -40],
+//           iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+//         }),
+//       },
+//     )
+//       .on('click', function () {
+//         this.remove();
+//         this.bounce(3);
+//         flyToLocation(searchResult.latlng, 16);
+//       })
+//       .addTo(startLayerGroup)
+//       .bindPopup(
+//         L.popup({
+//           maxWidth: 300,
+//           minWidth: 30,
+//           autoClose: true,
+//           closeOnClick: true,
+//           className: 'places-popup',
+//         }),
+//       )
+//       // .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
+//       .openPopup()
+//       .bounce(1)
+//       ._icon.classList.add('hueChangeBrown');
 
-    startCoords = coordinates;
-    currentStep = 'end';
-  } else {
-    L.marker(
-      e.latlng,
-      {
-        bounceOnAdd: true,
-        icon: L.icon({
-          iconSize: [25, 41],
-          iconAnchor: [10, 41],
-          popupAnchor: [2, -40],
-          iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
-        }),
-      },
-    )
-      .on('dblclick', function () {
-        this.remove();
-        this.bounce(2);
-        flyToLocation(searchResult.latlng, 16);
-      })
-      .addTo(endLayerGroup)
-      .bindPopup(
-        L.popup({
-          maxWidth: 300,
-          minWidth: 30,
-          autoClose: true,
-          closeOnClick: true,
-          className: 'places-popup',
-        }),
-      )
-      // .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
-      .openPopup()
-      .bounce(1)
-      ._icon.classList.add('hueChangeBrown');
+//     startCoords = coordinates;
+//     currentStep = 'end';
+//   } else {
+//     L.marker(
+//       e.latlng,
+//       {
+//         bounceOnAdd: true,
+//         icon: L.icon({
+//           iconSize: [25, 41],
+//           iconAnchor: [10, 41],
+//           popupAnchor: [2, -40],
+//           iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+//         }),
+//       },
+//     )
+//       .on('dblclick', function () {
+//         this.remove();
+//         this.bounce(2);
+//         flyToLocation(searchResult.latlng, 16);
+//       })
+//       .addTo(endLayerGroup)
+//       .bindPopup(
+//         L.popup({
+//           maxWidth: 300,
+//           minWidth: 30,
+//           autoClose: true,
+//           closeOnClick: true,
+//           className: 'places-popup',
+//         }),
+//       )
+//       // .setPopupContent(`<strong class='places'>${searchResult.properties.PlaceName}</strong></br>${searchResult.properties.Place_addr}`)
+//       .openPopup()
+//       .bounce(1)
+//       ._icon.classList.add('hueChangeBrown');
 
-    endCoords = coordinates;
-    currentStep = 'start';
-  }
+//     endCoords = coordinates;
+//     currentStep = 'start';
+//   }
 
-  if (startCoords && endCoords) {
-    updateRoute();
-  }
-});
+//   if (startCoords && endCoords) {
+//     updateRoute();
+//   }
+// });
