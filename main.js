@@ -438,3 +438,6 @@ select.addEventListener('change', () => {
 
 // copyright year
 document.querySelector('.year').textContent = new Date().getFullYear();
+
+fsLightbox.props.type = 'image';
+fsLightbox.props.types = [null, null, 'video'];
