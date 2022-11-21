@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <!-- favicon
+        ================================================== -->
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕️-0</text></svg>">
+        
+        <!-- GOOGLE FONTS -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&family=Josefin+Sans:wght@300;400&family=Playfair+Display:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+        
+        <!-- ION ICONS -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+        <!-- LEAFLET MAP -->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
+        integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+        integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+        crossorigin=""></script>
+
+        <!-- LOAD LEAFLET ROUTING MACHINE-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+        <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+        
+        <!-- LOAD LEAFLET GEOCODER-->
+        <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+        
+        <!-- - LOAD ESRI LEAFLET FROM CDN -->
+        <script src="https://unpkg.com/esri-leaflet@^3.0.8/dist/esri-leaflet.js"></script>
+        <script src="https://unpkg.com/esri-leaflet-vector@4.0.0/dist/esri-leaflet-vector.js"></script>
+
+        <!-- LOAD ESRI LEAFLET GEOCODER PLUGIN FROM CDN -->
+        <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css"
+        integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
+        crossorigin="">
+        <script src="https://unpkg.com/esri-leaflet-geocoder@^3.1.3/dist/esri-leaflet-geocoder.js"></script>
+
+        <!-- LOAD ARCGIS ROUTING JS FROM CDN -->
+        <script src="https://unpkg.com/@esri/arcgis-rest-request@4.0.0/dist/bundled/request.umd.js"></script>
+        <script src="https://unpkg.com/@esri/arcgis-rest-routing@4.0.0/dist/bundled/routing.umd.js"></script> 
+
+        <!-- PULSE ICON CDN -->
+        <script src="https://rawgit.com/mapshakers/leaflet-icon-pulse/master/src/L.Icon.Pulse.js"></script>
+        <link rel="stylesheet" href="https://rawgit.com/mapshakers/leaflet-icon-pulse/master/src/L.Icon.Pulse.css" />
+
+        <!-- CSS STYLES-->
+        
+        
+        
+        
+        
+
+        <!-- MAIN JS -->
+        
+        
+        <title>Déjà Brew &mdash; Best Coffee In Town</title>
+      <script type="module" crossorigin src="/deja_brew/assets/index.ee28f195.js"></script>
+      <link rel="stylesheet" href="/deja_brew/assets/index.f9cdf47b.css">
+      <script type="module">try{import.meta.url;import("_").catch(()=>1);}catch(e){}window.__vite_is_modern_browser=true;</script>
+      <script type="module">!function(){if(window.__vite_is_modern_browser)return;console.warn("vite: loading legacy build because dynamic import or import.meta.url is unsupported, syntax error above should be ignored");var e=document.getElementById("vite-legacy-polyfill"),n=document.createElement("script");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}();</script>
+    </head>
+    <body>
+        <header class="header navbar">
+            <!-- NAVBAR LOGO-->
+            <a href="#"><img class="header__logo navbar__logo logo" src="/deja_brew/assets/logo-dark.17af72a0.png" alt=" The Grind logo"></a>
+            <!-- MENU ITEMS -->
+            <nav class="main-nav" aria-label="Main">
+                <ul class="main-nav__list">
+                    <li><a class='main-nav__link' href="#hero">Home</a></li>
+                    <li><a class='main-nav__link' href="#about">About</a></li>
+                    <li><a class='main-nav__link' href="#menu">Menu</a></li>
+                    <li><a class='main-nav__link' href="#coooking-tips">Blog</a></li>
+                    <li><a class='main-nav__link' href="#contact">contact</a></li>
+                </ul>
+            </nav>
+            <!-- RESERVATION BTN -->
+            <button class='res-btn btn btn--lg main-nav__res-btn'>Reservation</button>
+
+            <!-- MOBILE NAVIGATION -->
+            <button class='btn-mobile-nav'>
+                <ion-icon class='icon-mobile-nav' name="menu-outline"></ion-icon>
+                <ion-icon class='icon-mobile-nav' name="close-outline"></ion-icon>
+            </button>
+        </header> 
+
+        <main>
+            <section id='hero' class="section__hero">
+                <div class="hero__content">
+                    <div class="hero__content--inner">
+                        <!-- <span class="hero__content--intro-left subheading ">Déjà Brew</span> -->
+                        <h1 class="hero__content--title heading-primary">Enjoy your<br/>coffee with us</h1>
+                        <p class="hero__content--message msg--tint">Boost your productivity and build your mood  <br/> with a short break in the most comfortable place.</p>
+                        
+                        <div class="dual-btns">
+                            <button class="res-btn btn btn--cta dual-btn--margin-left margin-bottom-md ">reservation</button>
+                            <a href="#menu" class="btn btn--view-menu">view menu</a>
+                        </div>
+                    </div>
+                    <div class="hero__content--delivered-coffee">
+                        <div class="hero__content--delivered-imgs">
+                            <img loading="lazy" src="/deja_brew/assets/customer-1.a2ebddd9.jpg" alt="Customer photo">
+                            <img loading="lazy" src="/deja_brew/assets/customer-2.4f884e06.jpg" alt="Customer photo">
+                            <img loading="lazy" src="/deja_brew/assets/customer-3.af2db5fa.jpg" alt="customer photo">
+                            <img loading="lazy" src="/deja_brew/assets/customer-4.e77b20e3.jpg" alt="customer photo">
+                            <img loading="lazy" src="/deja_brew/assets/customer-5.0e035c50.jpg" alt="customer photo">
+                            <img loading="lazy" src="/deja_brew/assets/customer-6.1e2bd759.jpg" alt="customer photo">
+                        </div>
+                        <p class="hero__content--delivered-text"> <span>250,000+</span> cups of coffee delivered last year!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TOP SECTION -->
+            <section class="section__container top__section">
+                <span class="scroll-icon-bg">
+                    <a href="#about"><i class="scroll-icon"></i></a>
+                </span>
+                <div class="container">
+                    <!-- ABOUT SEC-->
+                    <section id="about" class="grid grid--2-cols grid--center-v section">
+                        <div class="about-img">
+                            <img src="/deja_brew/assets/cafe-inside.b825bf6b.jpg" alt="restaurant image" />
+                            <span class="play-video-anim"></span>
+                            <a data-fslightbox href="https://www.youtube.com/watch?v=MaR-pJPXKyc" class="play-video"
+                                ><i class="fas fa-play"></i
+                            ></a>
+                        </div>
+                        <!-- ABOUT CONTENT -->
+                        <div class="about__content">
+                            <span class="subheading clr-primary">About us</span>
+                            <h2 class="heading-secondary">We invite <br>you to visit our cafe</h2>
+                            <p class="about__content--message text-justify">In 2010, Déjà Brew opened its first location in downtown Boston. Focused entirely on serving the perfect
+                                food, the cozy cafe located in the city's busy Financial District created a sensation
+                                in the area winning praise from food critics and numerous people's choice awards.
+                            </p>
+                            <!-- ABOUT BTNS -->
+                            <div class="about__content--btns">
+                                <button class="btn ">read more</button>
+                                    <ul class="social-links" role="list">
+                                        <li><ion-icon name="logo-facebook" class="social-icon"></ion-icon></li>
+                                        <li><ion-icon name="logo-instagram" class="social-icon"></ion-icon></li>
+                                        <li><ion-icon name="logo-twitter" class="social-icon"></ion-icon></li>
+                                        <li><ion-icon name="logo-youtube" class="social-icon"></ion-icon></li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- WHY US SEC -->
+                    <section id="why-us" class="section">
+                        <span class="subheading clr-primary text-center">Why us</span>
+                        <h2 class="heading-secondary text-center">Why do people choose us?</h2>
+                        <p class="msg--margin-bottom-md text-center">Déjà Brew has received numerous awards including: Best <br>brunch from the readers of Boston Globe.</p>
+                        <!-- FEATURES -->
+                        <div class="why-us--features grid grid--3-cols">
+                            <div class="feature text-center margin-bottom-md">
+                                <ion-icon class='feature-icon' name="cafe-outline"></ion-icon>
+                                <h3 class="heading-tertiary">Best beans</h3>
+                                <p class="feature-text">We use only the best beans <br> in the market. We always care <br> about our clients. </p>
+                            </div>
+                            <div class="feature text-center margin-bottom-md">
+                                <ion-icon class='feature-icon' name="bowling-ball-outline"></ion-icon>
+                                <h3 class="heading-tertiary ">Fresh bakery</h3>
+                                <p class="feature-text">Always fresh and tasty bakery<br> products waiting for you in our<br> coffee house. </p>
+                            </div>
+                            <div class="feature text-center">
+                                <ion-icon class='feature-icon' name="water-outline"></ion-icon>
+                                <h3 class="heading-tertiary">Quality milk</h3>
+                                <p class="feature-text">We care about your health and<br> use milk only from the best<br> manufacturers. </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- TEAM SEC-->
+                    <section id="team" class="section">
+                        <span class="subheading clr-primary text-center">Team</span>
+                        <h2 class="heading-secondary text-center">We are ready to serve you</h2>
+                        <p class="msg--margin-bottom-md text-center">We have a combined 12&#43; years in the culinary industry, <br> we love food and we love what we do.</p>
+                        <!-- TEAM CARDS -->
+                        <div class="cards grid grid--3-cols">
+                            <!-- CARD 1-->
+                            <article class="card__content margin-bottom-md-responsive">
+                                    <figure class="card__content--img">
+                                        <a data-fslightbox href="img/team/tucker.jpeg" class="play-video">
+                                            <img data-fslightbox  src="/deja_brew/assets/tucker.06d9ef72.jpeg" alt="Photo of beautifully arranged food">
+                                        </a>
+                                    </figure>
+                                <h3 class="card__content--title heading-tertiary text-center">Chris Evans</h3>
+                                <p class="card__content--subtitle text-center ">Barista</p>
+                                <ul class="card__content--social" role="list">
+                                    <li><ion-icon name="logo-facebook" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-instagram" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-twitter" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-youtube" class="social-icon social-icon--opacity"></ion-icon></li>
+                                </ul>
+                            </article>
+                            <!-- CARD 2-->
+                            <article class="card__content margin-bottom-md-responsive">
+                                <figure class="card__content--img">
+                                    <a data-fslightbox href="img/team/david.jpg" class="play-video">
+                                        <img data-fslightbox src="/deja_brew/assets/david.5d6e345d.jpg" alt="Photo of beautifully arranged food">
+                                    </a>
+                                </figure>
+                                <h3 class="card__content--title heading-tertiary text-center">David Lewis</h3>
+                                <p class="card__content--subtitle text-center ">Pastry Chef</p>
+                                <ul class="card__content--social" role="list">
+                                    <li><ion-icon name="logo-facebook" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-instagram" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-twitter" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-youtube" class="social-icon social-icon--opacity"></ion-icon></li>
+                                </ul>
+                            </article>
+                            <!-- CARD 3-->
+                            <article class="card__content">
+                                <figure class="card__content--img">
+                                    <div class="card__content--img">
+                                        <a data-fslightbox href="img/team/ashley.jpg" class="play-video">
+                                            <img data-fslightbox src="/deja_brew/assets/ashley.b281af6d.jpg" alt="Photo of beautifully arranged food">
+                                        </a>
+                                    </div>
+                                </figure>
+                                <h3 class="card__content--title heading-tertiary text-center">Ashley Morgan</h3>
+                                <p class="card__content--subtitle text-center ">Barista</p>
+                                <ul class="card__content--social" role="list">
+                                    <li><ion-icon name="logo-facebook" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-instagram" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-twitter" class="social-icon social-icon--opacity"></ion-icon></li>
+                                    <li><ion-icon name="logo-youtube" class="social-icon social-icon--opacity"></ion-icon></li>
+                                </ul>
+                            </article>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- NUMBERS SEC-->
+                    <section id="numbers" class="section">
+                        <ul class="numbers grid grid--4-cols text-center" role="list">
+                            <li class="numbers__block">
+                                <h3 class="numbers__block-num heading-secondary" data-count="700">700<span class="icon">+</span></h3>
+                                <p class="numbers__block-text margin-bottom-md">visitors daily</p>
+                            </li>
+                            <li class="numbers__block">
+                                <h3 class="numbers__block-num heading-secondary" data-count="700">500<span class="icon">+</span></h3>
+                                <p class="numbers__block-text margin-bottom-md">deliveries monthly</p>
+                            </li>
+                            <li class="numbers__block">
+                                <h3 class="numbers__block-num heading-secondary" data-count="100">100<span class="icon small">%</span></h3>
+                                <p class="numbers__block-text margin-bottom-md">Positive feedback</p>
+                            </li>
+                            <li class="numbers__block">
+                                <h3 class="numbers__block-num heading-secondary" data-count="300">300<span class="icon">+</span></h3>
+                                <p class="numbers__block-text">Awards</p>
+                            </li>
+                        </ul>
+                    </section>
+                    
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- OPENING HOURS SEC -->
+                    <section id="opening-hours" class="section">
+                        <div class="opening-hours--container">
+                            <div class="opening-hours--content">
+                                <span class="subheading">our hours</span>
+                                <h3 class="heading-tertiary--lg opening-hours--title">Opening ours</h3>
+                                <p class="opening-hours--msg">Due to COVID-19 regulations, our opening times have been adjusted.</p>
+                                <div class="dual-btns">
+                                    <button class="res-btn btn btn--cta dual-btn--margin-left margin-bottom-md">reservation</button>
+                                    <a href="#contact" class="btn">contact us</a>
+                                </div>
+                            </div>
+                            <!-- DAYS / HOURS -->
+                            <div class="opening-hours--time grid margin-top-md-responsive--neg">
+                                <ul class="days-hours" role="list">
+                                    <li>
+                                        <p class="days">monday to friday</p>
+                                        <h3 class="time heading-tertiary">05 : 00</h3>
+                                        <h3 class="time heading-tertiary">17 : 30</h3>
+                                    </li>
+                                    <li>
+                                        <p class="days">Saturday to sunday</p>
+                                        <h3 class="time heading-tertiary">10 : 00</h3>
+                                        <h3 class="time heading-tertiary">14 : 00</h3>
+                                    </li>
+                                </li>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <section id="menu" class="section">
+                        <span class="subheading clr-primary text-center">menu</span>
+                        <h2 class="heading-secondary text-center">our menu</h2>
+                        <p class="text-center"> Choose from our wide range of delicious and freshly prepared <br> beverages and pastries.</p>
+                        <!-- MAP -->
+                        <div class="menu-btns container">
+                            <button class="menu-btn btn">Bakery</button>
+                            <button class="menu-btn btn menu-btn--active">Coffee</button>
+                            <button class="menu-btn btn">Beans</button>
+                        </div>
+
+                        <span class="separator">&nbsp;</span>
+
+                        <div class="menu-content container grid grid--2-cols">
+                            <ul class="menu-list" role="list">
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/spice.1e135f5a.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">P'Spice Latte</h3>
+                                        <p class="menu-item-desc">Espresso and milk with the flavor of<br>pumpkin and nutmeg.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/mocha.912cb191.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Caffè Mocha</h3>
+                                        <p class="menu-item-desc">Espresso combined with mocha sauce<br>and steamed milk.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/machiatto.174f118a.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Caramel Macchiato</h3>
+                                        <p class="menu-item-desc">Steamed milk with vanilla espresso<br> and caramel drizzle.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/hazlenut.ee875ccb.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Hazelnut Latte</h3>
+                                        <p class="menu-item-desc">House-made hazelnut-praline-infused<br>milk with espresso.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                            </ul>
+                            <ul class="menu-list">
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/picollo.95c772f7.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Piccollo Latte</h3>
+                                        <p class="menu-item-desc">Cold Brew, demerara sugar, chicory<br> root roasted.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/flat.5136f29d.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Flat White</h3>
+                                        <p class="menu-item-desc">A coffee drink with a double espresso<br> & lightly frosted milk.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/frappuccino.2bea98ed.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Coffee Frappuccino</h3>
+                                        <p class="menu-item-desc">Coffee meets milk and ice in a blender <br> to create our Frappuccino.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                                <li class="menu-list--body">
+                                    <img class="menu-item--img" src="/deja_brew/assets/spice.1e135f5a.png" alt="photo of coffee">
+                                    <div class='menu-item--content'>
+                                        <h3 class="heading-tertiary menu-item-title">Hot Cappuccino</h3>
+                                        <p class="menu-item-desc">Dark, rich espresso lies in wait under a<br> layer of thick milk foam.</p>
+                                    </div>
+                                    <p class="menu-item--price">$9.99</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </section> <!-- x TOP SECTION -->
+            
+            <!-- POWER DEALS SEC -->
+            <section id='power-deals' class="mobile-app-sec container section">
+                <div class="mobile-app__content grid grid--2-cols grid--center-v">
+                    <div class="mobile-app__content--left">
+                        <span class="subheading margin-top-xl-responsive">Power Deals</span>
+                        <h3 class="heading-tertiary--lg clr-light">Buy two lattes, <br>Get two free!</h3>
+                        <p class="clr-light msg--tint"> Our <strong>Pumpkin Spice Latte</strong> has been bussin', so <br> we're gonna give you a little extra.</p>
+                        <div class="dual-btns margin-top-md">
+                            <a href="#" class="btn dual-btn--margin-left margin-bottom-md-responsive"><ion-icon class='app-icon' name="logo-google-playstore"></ion-icon><span>playstore</span></a>
+                            <a href="#" class="btn"><ion-icon  class='app-icon ' name="logo-apple-appstore"></ion-icon>appstore</a>
+                        </div>
+                    </div>
+                        <img class='mobile-app__content--img coffee-img' src="/deja_brew/assets/cofeee.e4efd23d.png" alt="Barista">
+                </div>
+            </section>
+
+            <!-- BOTTOM SECTION -->
+            <section class="section__container top__section bottom__section">
+                <div class="container">
+                    <!-- REVIEWS SEC-->
+                    <section id="reviews" class="reviews grid grid--2-cols grid--center-v section">
+                        <!-- GALLERY -->
+                        <div class="gallery">
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-1.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-1.2ac51651.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-8.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-8.ca0db2ae.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-3.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-3.9124cc89.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-6.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-6.d687f6ac.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-2.jpg" class="play-video">
+                                    <img data-fslightbox  src="/deja_brew/assets/gallery-2.d3d34ad4.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-4.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-4.a4b62c28.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-9.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-9.11ec7f9b.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-7.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-7.672a8f3c.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                            <figure class="gallery-item">
+                                <a data-fslightbox href="img/gallery/gallery-5.jpg" class="play-video">
+                                    <img data-fslightbox src="/deja_brew/assets/gallery-5.38d8cad3.jpg" alt="Photo of beautifully arranged food">
+                                </a>
+                            </figure>
+                        </div>
+
+                        <!-- REVIEW CONTENT -->
+                        <div class="reviews__content">
+                            <span class="subheading clr-primary text-center--responsive margin-top--responsive">Reviews</span>
+                            <h2 class="heading-secondary text-center--responsive">What our visitors say</h2>
+                            <p class="reviews__content--message text-center--responsive">We've been in business a very long time, hear what our clients <br> have to say about their experience with us.
+                            </p>
+                            <!-- CAROUSEL -->
+                            <div class="carousel">
+                                <div class="carousel__slider carousel__container">
+                                    <div class="carousel__slide">
+                                        <img class='carousel__testimonial--img' src="https://64.media.tumblr.com/cfd6cac0e231470147c069b385eb61b0/3eb23cd9d087e809-88/s400x600/09b6aa0697d2200932dab765d22d0fdf13462335.jpg" alt="Customer photo">
+                                        <blockquote class="carousel__testimonial">
+                                            <p class="carousel__testimonial--text"> Amazing service and staff. You won’t find better latte in Boston.</p>
+                                            <p class="carousel__testimonial--author">Rebecca Glasgow</p>
+                                            <p class="carousel__testimonial--job">Software Engineer at Instagram</p>
+                                        </blockquote>
+                                    </div>
+                                    <button class="carousel-btn carousel-btn--left">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                        </svg>
+                                    </button>
+                                    <button class="carousel-btn carousel-btn--right">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                        </svg>
+                                    </button> 
+                                    <div class="dots"> </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- COOKING TIPS SEC -->
+                    <section id="coooking-tips" class="section">
+                        <span class="subheading clr-primary text-center">Recipes</span>
+                        <h2 class="heading-secondary text-center">Cooking Tips & Recipes</h2>
+                        <p class="msg--margin-bottom-md text-center">Learn cooking tips, tricks and recipes from our pastry chef.</p>
+                        <div class="cards grid grid--3-cols">
+                            <!-- ARTICLE 1-->
+                            <article class="cooking-tips--body margin-bottom-md-responsive">
+                                <figure class="cooking-tips--img">
+                                    <span class="img-tag article">article</span>
+                                    <img src="/deja_brew/assets/article-3.78f52775.jpg" alt="picture of a banana bread">
+                                </figure>
+                                <header class="cooking-tips--content">
+                                    <h3 class="heading-tertiary margin-top-md text-center--responsive">Enhance your latte flavours</h3>
+                                    <p class="cooking-tips-msg text-center--responsive ">Wanna enhance the flavours for your next meal? Learn the tips our pastry chef use to make our food taste world
+                                        class and give it that extra zest.</p>
+                                </header>
+                                <footer class="cooking-tips--body-user">
+                                        <img class='margin-right-sm' src="/deja_brew/assets/david.5d6e345d.jpg" alt="Picture os pastry chef">
+                                        <p class="user-name">David Lewis</p>
+                                        <p class="date">12/11/22</p>
+                                </footer>
+                            </article>
+                            <!-- ARTICLE 2-->
+                            <article class="cooking-tips--body margin-bottom-md-responsive">
+                                <figure class="cooking-tips--img">
+                                    <span class="img-tag recipe">recipe</span>
+                                    <img src="https://i.pinimg.com/564x/c6/b6/43/c6b6433621c77d3a9bda672718e419c4.jpg" alt="picture of a banana bread">
+                                </figure>
+                                <header class="cooking-tips--content">
+                                    <h3 class="heading-tertiary margin-top-md text-center--responsive">Hazelnut Coconut Bread</h3>
+                                    <p class="cooking-tips-msg text-center--responsive">Featured in Edible Boston Magazine, our pastry chef created this recipe over 10+ years ago. Learn how he did it and how you can add your own spin on it.</p>
+                                </header>
+                                <footer class="cooking-tips--body-user">
+                                        <img class='margin-right-sm' src="/deja_brew/assets/david.5d6e345d.jpg" alt="Picture os pastry chef">
+                                        <p class="user-name">David Lewis</p>
+                                        <p class="date">02/16/23</p>
+                                </footer>
+                            </article>
+                            <!-- ARTICLE 3-->
+                            <article class="cooking-tips--body">
+                                <figure class="cooking-tips--img">
+                                    <span class="img-tag blog">blog</span>
+                                    <img src="/deja_brew/assets/article-3-copy.caa79ae8.jpg" alt="picture of a banana bread">
+                                </figure>
+                                <header class="cooking-tips--content">
+                                    <h3 class="heading-tertiary margin-top-md text-center--responsive">Becoming a better Chef</h3>
+                                    <p class="cooking-tips-msg text-center--responsive">Becoming a pastry chef is not easy, but if you follow a few guidelines from our own expert, maybe we can help
+                                        make your journey just a little bit easier.</p>
+                                </header>
+                                <footer class="cooking-tips--body-user">
+                                        <img class='margin-right-sm' src="/deja_brew/assets/david.5d6e345d.jpg" alt="Picture os pastry chef">
+                                        <p class="user-name">David Lewis</p>
+                                        <p class="date">03/16/23</p>
+                                </footer>
+                            </article>
+                        </div>
+                        <div class="cooking-tips--footer">
+                            <p class="cooking-tips--footer-msg text-center--responsive margin-top-md-responsive--neg">Read all our articles, blog posts and tips over on our blog. We add new content every week!</p>
+                            <a href="#blog" class="btn margin-top-md-responsive">visit blog</a>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- NEWSLETTER -->
+                    <section id="newsletter" class="newsletter text-center section">
+                        <div class="newsletter--content">
+                            <span class="subheading">newsletter</span>
+                            <h3 class="heading-tertiary--lg opening-hours--title">Subscribe to our Newsletter</h3>
+                            <p class="opening-hours--msg">Subscribe and stay up-to-date with our new recipes, articles, blog posts and more.</p>
+                            <!-- NEWSLETTER INPUT FORM -->
+                            <div class="newsletter-contact">
+                                <form class="newsletter-form" name="sign-up">
+                                    <input type="email" placeholder='Enter your email address' name="email" required>
+                                    <button class="subscribe-btn btn margin-top-md-responsive">Subscribe</button>
+                                </form>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- CONTACT -->
+                    <section id="contact" class="text-center section">
+                        <span class="subheading clr-primary text-center">contact</span>
+                        <h2 class="heading-secondary text-center">Write us a message</h2>
+                        <p class="msg--margin-bottom-md text-center">Have a question about our services, or just want to <br> know how we're doing?. Drop us a line.</p>
+                            <!-- CONTACT FORM INPUTS -->
+                            <form class="contact-form--body grid grid--2-cols" name='contact-us'>
+                                    <input  type="text" name='first-name' placeholder="First Name" required>
+                                    <input type="text" name='last-name' placeholder="Last Name" required>
+                                    <input type="number" name='Tel.' placeholder="Tel" required>
+                                    <input type="email" name='contact-email' placeholder="Email" required>
+                                    <textarea type="text" name="message" placeholder="Write message here..." rows="5" required></textarea>
+                                    <div class="contact-form--btn">
+                                        <button class="btn">send message</button>
+                                    </div>
+                            </form>
+                    </section>
+
+                    <!-- SEPARATOR -->
+                    <span class="separator">&nbsp;</span>
+
+                    <!-- LOCATION SECTION -->
+                    <section id="location" class="text-center section">
+                        <span class="subheading clr-primary text-center">Location</span>
+                        <h2 class="heading-secondary text-center">Come & join us</h2>
+                        <p class="msg--margin-bottom-md text-center"> Drop by sometime for fresh coffee and pastries.<br>  Our doors are always open for you.</p>
+                        <!-- MAP -->
+                        <div id="map"></div>
+                    </section>
+
+            </section> <!-- x BOTTOM SECTION -->
+        </main>
+
+        <!-- FOOTER TOP-->
+        <footer id='footer' class="footer container section">
+            <div class="footer-body--top">
+                <a href="#"><img class="footer-logo logo " src="/deja_brew/assets/logo-white.14bad754.png" alt=" The Grind logo"></a>
+                    <ul class="social-links" role="list">
+                        <li><ion-icon name="logo-facebook" class="social-icon clr-light"></ion-icon></li>
+                        <li><ion-icon name="logo-instagram" class="social-icon clr-light"></ion-icon></li>
+                        <li><ion-icon name="logo-twitter" class="social-icon clr-light"></ion-icon></li>
+                        <li><ion-icon name="logo-youtube" class="social-icon clr-light"></ion-icon></li>
+                    </ul>
+            </div>
+
+            <!-- SEPARATOR -->
+            <span class="separator--light">&nbsp;</span>
+
+            <!-- FOOTER BOTTOM-->
+            <div class="footer-body--bottom grid grid--3-cols">
+                <div class="subscribe-footer">
+                    <h3 class="subscribe-footer--title heading-tertiary">Get Notifications</h3>
+                    <p class="subscribe-footer--msg msg--tint">Stay up-to-date with our free monthly newsletter.</p>
+                    <form class="subscribe-form--body grid" name='get-notification'>
+                        <input type="email" name='contact-email' placeholder="Email address..." required>
+                        <button class="btn">subscribe to newsletter.</button>
+                    </form>
+                </div>
+                <div class="about-footer">
+                    <h3 class="about-footer--title heading-tertiary">About us</h3>
+                    <p class="text-justify margin-bottom-sm msg--tint">
+                        In 2010, Déjà Brew opened its first location in downtown Boston. Focused entirely on serving the perfect
+                        food, the cozy cafe located in the city's busy Financial District created a sensation
+                        in the area winning praise from food critics and numerous people's choice awards.
+                    </p>
+                    <a href="#" class="footer-link">read more</a>
+                </div>
+                <div class="contact-footer">
+                    <h3 class="about-footer--title heading-tertiary">Contact us</h3>
+                    <ul class="contact-footer--links" role="list">
+                        <li class="contact-footer--links-item">
+                            <span class="item-title msg--tint">call:</span>
+                            <span class="msg--tint">+1 (617) 754 43 7I</span>
+                        </li>
+                        <li class="contact-footer--links-item">
+                            <span class="item-title msg--tint">write:</span>
+                            <span class="msg--tint">dejabrew.cafe@dejabrew.com</span>
+                        </li>
+                        <li class="contact-footer--links-item">
+                            <span class="item-title msg--tint">find us:</span>
+                            <span class="msg--tint">700 BC, Boston, MA</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- SEPARATOR -->
+            <span class="separator--light">&nbsp;</span>
+
+            <!-- COPYRIGHT -->
+            <div id='copyright' class="copyright-body">
+                <p class="margin-bottom-md-responsive text-center--responsive">Built and designed by <a href="https://ikeronx.github.io/portfolio-v2/" target="blank"><strong>Keron Williams</strong></a>. All rights reserved.</p>
+                <a href="#hero" class="footer-link back-up">back to top</a>
+            </div>
+        </footer>
+
+        <!-- MODAL -->
+        <div class="modal hidden">
+            <button class="close-modal--btn carousel-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="carousel-btn--icon">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+            <h3 class="modal-header heading-tertiary text-center">Table Reservation</h3>
+            <form class="modal-form--body contact-form--body grid grid--3-cols" name='reservation'>
+                <input  type="text" name='first-name' placeholder="First Name" required>
+                <input type="text" name='last-name' placeholder="Last Name" required>
+                <input type="number" name='Tel' placeholder="Tel. Num" required>
+                <select type="number" name='contact-email' placeholder="Email" required> 
+                    <option value="">1 person</option>
+                    <option value="">2 persons</option>
+                    <option value="">3 persons</option>
+                    <option value="">4 persons</option>
+                    <option value="">5 persons</option>
+                    <option value="">6 or more Persons</option>
+                </select>
+                <input type="date" name="date">
+                <input type="time">
+                <textarea type="text" name="message" placeholder="Write message here..." rows="5" required></textarea>
+                <div class="modal-form--btn">
+                    <button class="btn">reserve a table</button>
+                </div>
+            </form>
+        </div>
+        <div class="overlay hidden"></div>
+        <div class="my-icon"></div>
+      <script nomodule>!function(){var e=document,t=e.createElement("script");if(!("noModule"in t)&&"onbeforeload"in t){var n=!1;e.addEventListener("beforeload",(function(e){if(e.target===t)n=!0;else if(!e.target.hasAttribute("nomodule")||!n)return;e.preventDefault()}),!0),t.type="module",t.src=".",e.head.appendChild(t),t.remove()}}();</script>
+      <script nomodule crossorigin id="vite-legacy-polyfill" src="/deja_brew/assets/polyfills-legacy.786fb915.js"></script>
+      <script nomodule crossorigin id="vite-legacy-entry" data-src="/deja_brew/assets/index-legacy.105c2771.js">System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))</script>
+    </body>
+</html>
