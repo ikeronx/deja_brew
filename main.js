@@ -425,15 +425,14 @@ function showPlaces(category) {
           bounceOnAdd: true,
         }).on('click', function () {
           this.bounce(1);
-          flyToLocation(searchResult.latlng, 16);
         })
           .addTo(layerGroup)
           .bindPopup(
             L.popup({
               maxWidth: 300,
               minWidth: 30,
-              autoClose: true,
-              closeOnClick: true,
+              autoClose: false,
+              closeOnClick: false,
               className: 'places-popup',
             }),
           )
