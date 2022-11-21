@@ -326,20 +326,36 @@ const searchControl = L.esri.Geocoding.geosearch({
 const results = L.layerGroup().addTo(map);
 
 // 2. Create an event handler to access the data from the search results. Call the clearLayers method to remove the previous data from the LayerGroup.
-searchControl.on('results', (data) => {
+searchControl.on('results', async (data) => {
   results.clearLayers();
+
+  const resultCoords = [data.results[0].latlng.lat, data.results[0].latlng.lng];
 
   // 3. Create a loop that adds the coordinates of a selected search       results to a Marker.
   for (let i = data.results.length - 1; i >= 0; i--) {
-    const marker = L.marker(data.results[i].latlng);
+    const marker = L.marker(data.results[i].latlng, markerIcon).on('click', function () {
+      this.bounce(1);
+      flyToLocation(resultCoords, 15);
+    });
+
+    const pulseMarker = L.marker(data.results[i].latlng, animatedCircleIcon);
 
     // 4. Add a lngLatString variable that stores the rounded search result   coordinates. Append the bindPopup method to the marker to display the     coordinates and address of the result.
     const lngLatString = `${Math.round(data.results[i].latlng.lng * 100000) / 100000}, ${
       Math.round(data.results[i].latlng.lat * 100000) / 100000
     }`;
-    marker.bindPopup(`<p>${data.results[i].properties.LongLabel}</p>`);
-    marker.openPopup()._icon.classList.add('hueChangeBrown');
+    marker.bindPopup(
+      L.popup({
+        autoClose: false,
+        closeOnClick: false,
+        className: 'search-popup',
+      }),
+    ).setPopupContent(
+      `<p><strong>${data.results[i].properties.LongLabel}</strong></p>`,
+    );
+    results.addLayer(pulseMarker);
     results.addLayer(marker);
+    marker.openPopup().bounce(3)._icon.classList.add('hueChangeBrown');
   }
 });
 
@@ -438,6 +454,3 @@ select.addEventListener('change', () => {
 
 // copyright year
 document.querySelector('.year').textContent = new Date().getFullYear();
-
-// fsLightbox.props.type = 'image';
-// fsLightbox.props.types = [null, null, 'video'];
