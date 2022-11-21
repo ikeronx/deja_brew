@@ -440,4 +440,4 @@ select.addEventListener('change', () => {
 document.querySelector('.year').textContent = new Date().getFullYear();
 
 fsLightbox.props.type = 'image';
-fsLightbox.props.types = [null, null, 'video'];
+// fsLightbox.props.types = [null, null, 'video'];
